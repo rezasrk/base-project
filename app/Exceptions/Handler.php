@@ -3,6 +3,9 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
+use Illuminate\Validation\UnauthorizedException;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -23,8 +26,23 @@ class Handler extends ExceptionHandler
      */
     public function register(): void
     {
-        $this->reportable(function (Throwable $e) {
+        $this->reportable(function (Throwable $exception) {
             //
         });
+
+        $this->renderable(function (Throwable $exception, Request $request) {
+            return $this->registerException($exception, $request);
+        });
+    }
+
+    private function registerException(Throwable $exception, Request $request)
+    {
+        if ($exception instanceof ValidationException) {
+            return response()->validationException($exception);
+        }
+
+        if ($exception instanceof UnauthorizedException) {
+            return response()->unauthenticatedException();
+        }
     }
 }
