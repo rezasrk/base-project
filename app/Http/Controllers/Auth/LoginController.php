@@ -7,8 +7,22 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Services\Actions\Auth\DTO\LoginRequestDTO;
 use App\Services\Actions\Auth\LoginService;
 
+/**
+ * @group Auth
+ */
 class LoginController extends Controller
 {
+    /**
+     * Login
+     * 
+     * @response{
+     *   "status":"success",
+     *   "message":"User login successfully"
+     *   "data":{
+     *        "token":"1|kdughDHGFitfqpmnbdh43E32"
+     *    }
+     * }
+     */
     public function __invoke(LoginRequest $loginRequest, LoginService $loginService)
     {
         $result = $loginService->handle(
