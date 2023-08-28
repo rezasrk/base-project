@@ -20,7 +20,7 @@ class CreateRequestDetailsTable extends Migration
             $table->float('amount', 15, 0)->nullable();
             $table->float('price', 20, 0)->default(0);
             $table->integer('unit_price')->default(0);
-            $table->string('description',300)->nullable();
+            $table->string('description', 300)->nullable();
             $table->timestamps();
         });
     }

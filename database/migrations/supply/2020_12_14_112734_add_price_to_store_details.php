@@ -14,7 +14,7 @@ class AddPriceToStoreDetails extends Migration
     public function up()
     {
         Schema::table('store_details', function (Blueprint $table) {
-            $table->float('price',15,2)->nullable()->after('amount');
+            $table->float('price', 15, 2)->nullable()->after('amount');
         });
     }
 

@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class CreateWarehouseSumView extends Migration
 {
@@ -14,8 +12,8 @@ class CreateWarehouseSumView extends Migration
      */
     public function up()
     {
-       DB::unprepared('drop view if exists warehouse_sum');
-       DB::unprepared('
+        DB::unprepared('drop view if exists warehouse_sum');
+        DB::unprepared('
         create view warehouse_sum
         as 
         select 

@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class CreateCollegueView extends Migration
 {
@@ -14,9 +12,9 @@ class CreateCollegueView extends Migration
      */
     public function up()
     {
-       DB::unprepared('drop view if exists collegue');
-       DB::unprepared(
-        '
+        DB::unprepared('drop view if exists collegue');
+        DB::unprepared(
+            '
         create view collegue
         as 
         select completeCategoryTitle(categories.id) as title,coll.* from categories
@@ -31,7 +29,7 @@ class CreateCollegueView extends Migration
         on coll.category_id = categories.id 
         order by categories.id 
         '
-       );
+        );
     }
 
     /**

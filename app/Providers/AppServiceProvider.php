@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
 
     private function registerMigrationFiles()
     {
-        $baseMigrationPath =  database_path('migrations');
+        $baseMigrationPath = database_path('migrations');
 
         $migrationPaths = collect(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($baseMigrationPath, RecursiveDirectoryIterator::SKIP_DOTS), RecursiveIteratorIterator::SELF_FIRST))
             ->filter(function (SplFileInfo $item) {

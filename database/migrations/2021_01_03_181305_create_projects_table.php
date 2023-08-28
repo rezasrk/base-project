@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('project_title')->nullable();
             $table->boolean('is_active')->default(1);
-            $table->string('logo',100)->nullable();
+            $table->string('logo', 100)->nullable();
         });
     }
 

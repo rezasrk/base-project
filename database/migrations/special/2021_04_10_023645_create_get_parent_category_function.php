@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class CreateGetParentCategoryFunction extends Migration
 {
@@ -14,8 +12,8 @@ class CreateGetParentCategoryFunction extends Migration
      */
     public function up()
     {
-       DB::unprepared(" drop function if exists getParentCategory;");
-       DB::unprepared("
+        DB::unprepared(' drop function if exists getParentCategory;');
+        DB::unprepared('
        create function getParentCategory(parentId int,categoryId int)
        returns int deterministic
        begin
@@ -43,7 +41,7 @@ class CreateGetParentCategoryFunction extends Migration
 
            return 0;
        end
-       ");
+       ');
     }
 
     /**
@@ -53,6 +51,6 @@ class CreateGetParentCategoryFunction extends Migration
      */
     public function down()
     {
-        DB::unprepared(" drop function if exists getParentCategory;");
+        DB::unprepared(' drop function if exists getParentCategory;');
     }
 }

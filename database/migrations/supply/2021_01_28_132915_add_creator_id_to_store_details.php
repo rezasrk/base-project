@@ -16,7 +16,7 @@ class AddCreatorIdToStoreDetails extends Migration
         Schema::table('store_details', function (Blueprint $table) {
             $table->unsignedBigInteger('creator_id')->after('description')->default(1);
 
-//            $table->foreign('creator_id')->references('id')->on('users');
+            //            $table->foreign('creator_id')->references('id')->on('users');
         });
     }
 
@@ -28,7 +28,7 @@ class AddCreatorIdToStoreDetails extends Migration
     public function down()
     {
         Schema::table('store_details', function (Blueprint $table) {
-//            $table->dropForeign('store_details_creator_id_foreign');
+            //            $table->dropForeign('store_details_creator_id_foreign');
             $table->dropColumn('creator_id');
         });
     }

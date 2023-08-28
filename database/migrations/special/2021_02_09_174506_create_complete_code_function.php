@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class CreateCompleteCodeFunction extends Migration
 {
@@ -14,7 +12,7 @@ class CreateCompleteCodeFunction extends Migration
      */
     public function up()
     {
-	DB::unprepared('drop function if exists completeCode;');
+        DB::unprepared('drop function if exists completeCode;');
         DB::unprepared("
         create function completeCode(categoryId int)
         returns varchar(15) charset utf8 deterministic

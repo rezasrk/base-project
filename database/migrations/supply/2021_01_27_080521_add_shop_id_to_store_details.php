@@ -16,7 +16,7 @@ class AddShopIdToStoreDetails extends Migration
         Schema::table('store_details', function (Blueprint $table) {
             $table->unsignedBigInteger('shop_id')->default(1)->after('amount');
 
-//            $table->foreign('shop_id')->references('id')->on('shops');
+            //            $table->foreign('shop_id')->references('id')->on('shops');
         });
     }
 
@@ -28,7 +28,7 @@ class AddShopIdToStoreDetails extends Migration
     public function down()
     {
         Schema::table('store_details', function (Blueprint $table) {
-//            $table->dropForeign('store_details_shop_id_foreign');
+            //            $table->dropForeign('store_details_shop_id_foreign');
             $table->dropColumn('shop_id');
         });
     }

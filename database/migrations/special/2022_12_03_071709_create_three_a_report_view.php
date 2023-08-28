@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class CreateThreeAReportView extends Migration
 {
@@ -14,7 +12,7 @@ class CreateThreeAReportView extends Migration
      */
     public function up()
     {
-        DB::unprepared("drop view if exists three_a_report");
+        DB::unprepared('drop view if exists three_a_report');
         DB::unprepared("
         create view three_a_report as  
         select
@@ -52,6 +50,6 @@ class CreateThreeAReportView extends Migration
      */
     public function down()
     {
-        DB::unprepared("drop view if exists three_a_report");
+        DB::unprepared('drop view if exists three_a_report');
     }
 }

@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-use \Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class CreateCompleteCategoryCodeFunction extends Migration
 {
@@ -58,6 +56,6 @@ class CreateCompleteCategoryCodeFunction extends Migration
      */
     public function down()
     {
-       DB::unprepared('drop function if exists completeCategoryCode;');
+        DB::unprepared('drop function if exists completeCategoryCode;');
     }
 }

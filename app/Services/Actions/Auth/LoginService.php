@@ -19,7 +19,7 @@ class LoginService
 
     private function getToken(LoginRequestDTO $loginRequestDTO): string
     {
-        if (!filter_var($loginRequestDTO->getUsername(), FILTER_VALIDATE_EMAIL)) {
+        if (! filter_var($loginRequestDTO->getUsername(), FILTER_VALIDATE_EMAIL)) {
             $user = $this->loginWithUsername($loginRequestDTO->getUsername(), $loginRequestDTO->getPassword());
         } else {
             $user = $this->loginWithEmail($loginRequestDTO->getUsername(), $loginRequestDTO->getPassword());

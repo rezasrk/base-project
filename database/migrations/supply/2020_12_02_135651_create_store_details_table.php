@@ -15,7 +15,7 @@ class CreateStoreDetailsTable extends Migration
     {
         Schema::create('store_details', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['MRS','MIV','MRV']);
+            $table->enum('type', ['MRS', 'MIV', 'MRV']);
             $table->float('amount', 15, 0)->nullable();
             $table->string('request_detail_no')->nullable();
             $table->integer('request_detail_id')->default(0);

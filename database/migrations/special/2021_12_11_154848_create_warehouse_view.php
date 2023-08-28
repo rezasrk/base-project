@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class CreateWarehouseView extends Migration
 {
@@ -14,7 +12,7 @@ class CreateWarehouseView extends Migration
      */
     public function up()
     {
-	DB::unprepared("drop view if exists warehouse");
+        DB::unprepared('drop view if exists warehouse');
         DB::unprepared("
             create view warehouse as
             select
@@ -54,6 +52,6 @@ class CreateWarehouseView extends Migration
      */
     public function down()
     {
-        DB::unprepared("drop view if exists warehouse");
+        DB::unprepared('drop view if exists warehouse');
     }
 }

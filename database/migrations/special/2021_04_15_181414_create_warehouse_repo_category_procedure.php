@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class CreateWarehouseRepoCategoryProcedure extends Migration
 {
@@ -14,8 +12,8 @@ class CreateWarehouseRepoCategoryProcedure extends Migration
      */
     public function up()
     {
-       DB::unprepared(' drop procedure if exists  warehouseRepoCategory;');
-       DB::unprepared("
+        DB::unprepared(' drop procedure if exists  warehouseRepoCategory;');
+        DB::unprepared("
             create procedure warehouseRepoCategory(
                 in conditionCategory int,
                 in projectId int,

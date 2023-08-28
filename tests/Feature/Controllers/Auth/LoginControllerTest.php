@@ -64,14 +64,14 @@ final class LoginControllerTest extends BaseFeatureTestCase
         ]);
 
         $response = $this->postJson($this->getRoute(), [
-            'username' => $username . '-extra',
+            'username' => $username.'-extra',
             'password' => $password,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.unauthenticated')
+            'message' => __('messages.exceptions.unauthenticated'),
         ]);
     }
 
@@ -86,14 +86,14 @@ final class LoginControllerTest extends BaseFeatureTestCase
         ]);
 
         $response = $this->postJson($this->getRoute(), [
-            'username' => $username . '-extra',
+            'username' => $username.'-extra',
             'password' => $password,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.unauthenticated')
+            'message' => __('messages.exceptions.unauthenticated'),
         ]);
     }
 
@@ -109,13 +109,13 @@ final class LoginControllerTest extends BaseFeatureTestCase
 
         $response = $this->postJson($this->getRoute(), [
             'username' => $username,
-            'password' => $password . '-extra',
+            'password' => $password.'-extra',
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.unauthenticated')
+            'message' => __('messages.exceptions.unauthenticated'),
         ]);
     }
 
@@ -131,13 +131,13 @@ final class LoginControllerTest extends BaseFeatureTestCase
 
         $response = $this->postJson($this->getRoute(), [
             'username' => $username,
-            'password' => $password . '-extra',
+            'password' => $password.'-extra',
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.unauthenticated')
+            'message' => __('messages.exceptions.unauthenticated'),
         ]);
     }
 

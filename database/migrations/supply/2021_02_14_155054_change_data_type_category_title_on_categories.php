@@ -13,8 +13,8 @@ class ChangeDataTypeCategoryTitleOnCategories extends Migration
      */
     public function up()
     {
-        Schema::table('categories',function(Blueprint $table){
-            $table->string('category_title',700)->after('id')->change();
+        Schema::table('categories', function (Blueprint $table) {
+            $table->string('category_title', 700)->after('id')->change();
         });
     }
 
@@ -25,7 +25,7 @@ class ChangeDataTypeCategoryTitleOnCategories extends Migration
      */
     public function down()
     {
-        Schema::table('categories',function(Blueprint $table){
+        Schema::table('categories', function (Blueprint $table) {
             $table->string('category_title')->after('id')->change();
         });
     }

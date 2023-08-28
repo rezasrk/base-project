@@ -16,7 +16,7 @@ class ChangeStatusFromStringToIntegerInRequests extends Migration
         Schema::table('requests', function (Blueprint $table) {
             $table->unsignedBigInteger('status')->change()->default(46);
 
-//            $table->foreign('status')->references('id')->on('baseinfos');
+            //            $table->foreign('status')->references('id')->on('baseinfos');
         });
     }
 
@@ -28,7 +28,7 @@ class ChangeStatusFromStringToIntegerInRequests extends Migration
     public function down()
     {
         Schema::table('requests', function (Blueprint $table) {
-//            $table->dropForeign('requests_status_foreign');
+            //            $table->dropForeign('requests_status_foreign');
             $table->string('status')->change();
         });
     }

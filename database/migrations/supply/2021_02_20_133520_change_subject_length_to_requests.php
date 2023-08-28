@@ -14,7 +14,7 @@ class ChangeSubjectLengthToRequests extends Migration
     public function up()
     {
         Schema::table('requests', function (Blueprint $table) {
-            $table->string('subject',500)->nullable()->change();
+            $table->string('subject', 500)->nullable()->change();
         });
     }
 
@@ -26,7 +26,7 @@ class ChangeSubjectLengthToRequests extends Migration
     public function down()
     {
         Schema::table('requests', function (Blueprint $table) {
-            $table->string('subject',100)->nullable()->change();
+            $table->string('subject', 100)->nullable()->change();
         });
     }
 }

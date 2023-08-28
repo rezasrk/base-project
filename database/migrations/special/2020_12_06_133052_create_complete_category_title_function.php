@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class CreateCompleteCategoryTitleFunction extends Migration
 {
@@ -14,7 +12,7 @@ class CreateCompleteCategoryTitleFunction extends Migration
      */
     public function up()
     {
-        DB::unprepared("drop function if exists completeCategoryTitle;");
+        DB::unprepared('drop function if exists completeCategoryTitle;');
         DB::unprepared("
         create function completeCategoryTitle(categoryId int)
         returns text charset utf8 deterministic
@@ -50,8 +48,6 @@ class CreateCompleteCategoryTitleFunction extends Migration
         end
         ");
 
-
-      
     }
 
     /**
@@ -61,6 +57,6 @@ class CreateCompleteCategoryTitleFunction extends Migration
      */
     public function down()
     {
-        DB::unprepared("drop function if exists completeCategoryTitle;");
+        DB::unprepared('drop function if exists completeCategoryTitle;');
     }
 }

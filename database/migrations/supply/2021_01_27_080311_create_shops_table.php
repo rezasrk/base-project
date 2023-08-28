@@ -21,7 +21,7 @@ class CreateShopsTable extends Migration
 
         \Illuminate\Support\Facades\DB::table('shops')->insert([
             'id' => 1,
-            'shop_title' => '---'
+            'shop_title' => '---',
         ]);
     }
 
