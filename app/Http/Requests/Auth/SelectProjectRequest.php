@@ -9,7 +9,7 @@ class SelectProjectRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'project_id' => ['required', 'exists:projects,id']
+            'project_id' => ['required', 'exists:projects,id'],
         ];
     }
 
@@ -18,8 +18,8 @@ class SelectProjectRequest extends BaseFormRequest
         return [
             'project_id' => [
                 'description' => 'Id of a project',
-                'example' => 2
-            ]
+                'example' => 2,
+            ],
         ];
     }
 }

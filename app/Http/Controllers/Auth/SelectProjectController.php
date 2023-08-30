@@ -9,14 +9,14 @@ use App\Services\Actions\Auth\SelectProjectService;
 
 /**
  * @group Auth
- * 
+ *
  * @authenticate
  */
 class SelectProjectController extends Controller
 {
     /**
      * Select project
-     * 
+     *
      * @response{
      *   "status":"success",
      *   "message":"User access to this project"

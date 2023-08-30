@@ -14,7 +14,7 @@ class LoginController extends Controller
 {
     /**
      * Login
-     * 
+     *
      * @response{
      *   "status":"success",
      *   "message":"User login successfully"

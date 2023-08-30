@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 /**
  * @group Auth
- * 
+ *
  * @authenticate
  */
 class UserProjectsController extends Controller
 {
     /**
      * Select project
-     * 
+     *
      * @response{
      *   "status":"success",
      *   "message":"User's projects fetch correctly",

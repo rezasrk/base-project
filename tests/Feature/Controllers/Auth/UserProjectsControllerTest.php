@@ -24,9 +24,9 @@ final class UserProjectsControllerTest extends BaseFeatureTestCase
             'data' => [
                 [
                     'id' => $project->id,
-                    'title' => $project->project_title
-                ]
-            ]
+                    'title' => $project->project_title,
+                ],
+            ],
         ]);
     }
 
@@ -42,7 +42,7 @@ final class UserProjectsControllerTest extends BaseFeatureTestCase
         $response->assertExactJson([
             'status' => 'success',
             'message' => __('messages.fetch', ['title' => __('title.user_projects')]),
-            'data' => []
+            'data' => [],
         ]);
     }
 
@@ -63,8 +63,6 @@ final class UserProjectsControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.unauthenticated'),
         ]);
     }
-
-
 
     private function getRoute()
     {

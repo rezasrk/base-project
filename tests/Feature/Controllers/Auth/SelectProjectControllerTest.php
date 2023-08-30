@@ -21,13 +21,13 @@ final class SelectProjectControllerTest extends BaseFeatureTestCase
         $user = User::factory()->hasAttached($project)->create();
 
         $response = $this->actingAsUser($user)->postJson($this->getRoute(), [
-            'project_id' => $project->id
+            'project_id' => $project->id,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.select-project')
+            'message' => __('messages.select-project'),
         ]);
     }
 
@@ -38,7 +38,7 @@ final class SelectProjectControllerTest extends BaseFeatureTestCase
         User::factory()->hasAttached($project)->create();
 
         $response = $this->postJson($this->getRoute(), [
-            'project_id' => $project->id
+            'project_id' => $project->id,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
@@ -52,7 +52,7 @@ final class SelectProjectControllerTest extends BaseFeatureTestCase
     public function select_project_has_correct_rules()
     {
         $this->assertEquals([
-            'project_id' => ['required', 'exists:projects,id']
+            'project_id' => ['required', 'exists:projects,id'],
         ], (new SelectProjectRequest())->rules());
     }
 

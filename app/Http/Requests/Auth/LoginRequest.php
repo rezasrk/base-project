@@ -23,8 +23,8 @@ class LoginRequest extends BaseFormRequest
             ],
             'password' => [
                 'description' => 'Password of user.',
-                'example' => 'Ekdhgh34521Eugrhc'
-            ]
+                'example' => 'Ekdhgh34521Eugrhc',
+            ],
         ];
     }
 }

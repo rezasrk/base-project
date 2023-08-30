@@ -17,7 +17,7 @@ class ProjectFactory extends Factory
     {
         return $this->state(function () {
             return [
-                'is_active' => 0
+                'is_active' => 0,
             ];
         });
     }
@@ -26,7 +26,7 @@ class ProjectFactory extends Factory
     {
         return $this->state(function () {
             return [
-                'is_active' => 0
+                'is_active' => 0,
             ];
         });
     }
