@@ -9,5 +9,7 @@ return [
     ],
     'login_successfully' => 'Login successfully',
     'select-project' => 'User access to this project',
-    'fetch' => ':title fetch correctly',
+    'fetch' => ':title fetch successfully',
+    'store' => ':title store successfully',
+    'update' => ':title update successfully',
 ];

@@ -64,7 +64,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
         ]);
 
         $response = $this->postJson($this->getRoute(), [
-            'username' => $username.'-extra',
+            'username' => $username . '-extra',
             'password' => $password,
         ]);
 
@@ -86,7 +86,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
         ]);
 
         $response = $this->postJson($this->getRoute(), [
-            'username' => $username.'-extra',
+            'username' => $username . '-extra',
             'password' => $password,
         ]);
 
@@ -109,7 +109,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
 
         $response = $this->postJson($this->getRoute(), [
             'username' => $username,
-            'password' => $password.'-extra',
+            'password' => $password . '-extra',
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
@@ -131,7 +131,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
 
         $response = $this->postJson($this->getRoute(), [
             'username' => $username,
-            'password' => $password.'-extra',
+            'password' => $password . '-extra',
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
@@ -142,7 +142,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
     }
 
     /** @test */
-    public function admin_login_has_correct_rules()
+    public function admin_login_has_correct_validation_rules()
     {
         $this->assertEquals([
             'username' => ['required', 'max:190'],

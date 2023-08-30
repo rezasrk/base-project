@@ -274,7 +274,9 @@ return [
                 "status": "error",
                 "message": "Some thing went wrong!",
                 "errors": [
-                    'domain' => 'Domain is required.'
+                    'username' => [ 
+                        'username is required.'
+                    ]
                 ]
             }
 

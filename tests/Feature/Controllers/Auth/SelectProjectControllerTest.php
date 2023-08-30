@@ -49,7 +49,7 @@ final class SelectProjectControllerTest extends BaseFeatureTestCase
     }
 
     /** @test */
-    public function select_project_has_correct_rules()
+    public function select_project_has_correct_validation_rules()
     {
         $this->assertEquals([
             'project_id' => ['required', 'exists:projects,id'],
