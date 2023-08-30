@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Controllers\Profile;
 
+use App\Http\Controllers\Profile\UpdateUserProfileController;
 use App\Http\Requests\Profile\UpdateUserProfileRequest;
 use App\Models\User;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -182,6 +183,11 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
             'family' => ['required', 'max:100'],
             'user_sign' => ['nullable']
         ], $updateUserProfileRequest->rules());
+    }
+
+    public function update_user_profile_has_correct_form_request()
+    {
+        $this->assertActionUsesFormRequest(UpdateUserProfileController::class,'__invoke',UpdateUserProfileRequest::class);
     }
 
     private function getRoute()

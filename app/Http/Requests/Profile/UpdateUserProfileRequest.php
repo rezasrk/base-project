@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Profile;
 
 use App\Http\Requests\BaseFormRequest;
-use Illuminate\Support\Facades\App;
 
 class UpdateUserProfileRequest extends BaseFormRequest
 {
