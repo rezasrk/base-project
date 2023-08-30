@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 class UserProjectsController extends Controller
 {
     /**
-     * Select project
+     * User's projects
      *
      * @response{
      *   "status":"success",

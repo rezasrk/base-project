@@ -53,7 +53,7 @@ final class UserProjectsControllerTest extends BaseFeatureTestCase
         $project = Project::factory()->create([
             'project_title' => $projectTitle,
         ]);
-        $user = User::factory()->hasAttached($project)->create();
+        User::factory()->hasAttached($project)->create();
 
         $response = $this->getJson($this->getRoute());
 
