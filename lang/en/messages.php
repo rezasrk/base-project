@@ -3,8 +3,11 @@
 return [
     'exceptions' => [
         'validation' => 'Data is not correct.',
-        'unauthenticated' => 'The username or password is incorrect',
+        'authenticate_failed' => 'The username or password is incorrect',
+        'unauthenticated' => 'User must be authenticated',
+        'select_project' => 'User does not access to this project'
     ],
-    'login_successfull' => 'Login successfully',
-
+    'login_successfully' => 'Login successfully',
+    'select-project' => 'User access to this project',
+    'fetch' => ':title fetch correctly',
 ];

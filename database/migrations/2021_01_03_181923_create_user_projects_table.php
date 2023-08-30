@@ -21,8 +21,6 @@ class CreateUserProjectsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('project_id')->references('id')->on('projects');
         });
-
-        DB::table('projects')->insert(['id' => 1, 'project_title' => 'پروژه']);
     }
 
     /**

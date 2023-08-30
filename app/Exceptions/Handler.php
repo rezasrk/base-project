@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\UnauthorizedException;
 use Illuminate\Validation\ValidationException;
@@ -42,7 +44,11 @@ class Handler extends ExceptionHandler
         }
 
         if ($exception instanceof UnauthorizedException) {
-            return response()->unauthenticatedException();
+            return response()->error(__('messages.exceptions.authenticate_failed'), JsonResponse::HTTP_UNAUTHORIZED);
+        }
+
+        if ($exception instanceof AuthenticationException) {
+            return response()->error(__('messages.exceptions.unauthenticated'), JsonResponse::HTTP_UNAUTHORIZED);
         }
     }
 }

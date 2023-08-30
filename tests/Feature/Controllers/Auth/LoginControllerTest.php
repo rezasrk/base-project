@@ -16,7 +16,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
     use AdditionalAssertion;
 
     /** @test */
-    public function admin_can_login_successfully_with_correct_username_and_password()
+    public function admin_can_login_successfullyy_with_correct_username_and_password()
     {
         $username = 'admin';
         $password = 'RKSHcjk38745';
@@ -35,7 +35,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
     }
 
     /** @test */
-    public function admin_can_login_successfully_with_email_and_password()
+    public function admin_can_login_successfullyy_with_email_and_password()
     {
         $email = 'admin@gmail.com';
         $password = 'RKSHcjk38745';
@@ -71,7 +71,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.unauthenticated'),
+            'message' => __('messages.exceptions.authenticate_failed'),
         ]);
     }
 
@@ -93,7 +93,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.unauthenticated'),
+            'message' => __('messages.exceptions.authenticate_failed'),
         ]);
     }
 
@@ -115,7 +115,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.unauthenticated'),
+            'message' => __('messages.exceptions.authenticate_failed'),
         ]);
     }
 
@@ -137,7 +137,7 @@ final class LoginControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.unauthenticated'),
+            'message' => __('messages.exceptions.authenticate_failed'),
         ]);
     }
 

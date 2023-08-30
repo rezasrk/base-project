@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\ValidationException;
@@ -13,9 +14,11 @@ class ResponseServiceProvider extends ServiceProvider
     {
         $this->successResponse();
 
+        $this->resourceResponse();
+
         $this->validationExceptionResponse();
 
-        $this->unauthenticatedExceptionResponse();
+        $this->errorResponse();
     }
 
     private function successResponse()
@@ -34,6 +37,16 @@ class ResponseServiceProvider extends ServiceProvider
         });
     }
 
+    private function resourceResponse()
+    {
+        Response::macro('resource', function (string $message, JsonResource $jsonResource) {
+            return $jsonResource->additional([
+                'status' => 'success',
+                'message' => $message,
+            ]);
+        });
+    }
+
     private function validationExceptionResponse()
     {
         Response::macro('validationException', function (ValidationException $validationException) {
@@ -45,13 +58,13 @@ class ResponseServiceProvider extends ServiceProvider
         });
     }
 
-    private function unauthenticatedExceptionResponse()
+    private function errorResponse()
     {
-        Response::macro('unauthenticatedException', function () {
+        Response::macro('error', function (string $message, int $httpStatusCode) {
             return response()->json([
                 'status' => 'error',
-                'message' => __('messages.exceptions.unauthenticated'),
-            ], JsonResponse::HTTP_UNAUTHORIZED);
+                'message' => $message,
+            ], $httpStatusCode);
         });
     }
 }
