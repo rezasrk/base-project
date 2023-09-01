@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Enum\UserEnum;
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTruncation;
 use Laravel\Sanctum\Sanctum;
@@ -23,6 +24,15 @@ class BaseFeatureTestCase extends TestCase
     protected function actingAsUser(User $user): self
     {
         Sanctum::actingAs($user);
+
+        return $this;
+    }
+
+    protected function actingAsSuperUser(): self
+    {
+        $superUser = User::query()->where('id', UserEnum::SUPER_USER->value)->first();
+
+        Sanctum::actingAs($superUser);
 
         return $this;
     }

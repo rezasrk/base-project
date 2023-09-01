@@ -6,6 +6,7 @@ return [
         'authenticate_failed' => 'The username or password is incorrect',
         'unauthenticated' => 'The user must be authenticated',
         'select_project' => 'The user does not access to this project',
+        'access_denied' => 'You do not permission to this action',
     ],
     'login_successfully' => 'Login successfully',
     'old_password' => 'The old password is wrong',
