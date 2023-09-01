@@ -16,26 +16,29 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
 
-        $this->registerAPIRoute();
-        $this->registerSettingsRoute();
+        $this->registerRoute();
+    }
+
+    private function registerRoute()
+    {
+        $this->routes(function () {
+            $this->registerAPIRoute();
+            $this->registerSettingsRoute();
+        });
     }
 
     private function registerAPIRoute()
     {
-        $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
-        });
+        Route::middleware('api')
+            ->prefix('api')
+            ->group(base_path('routes/api.php'));
     }
 
     private function registerSettingsRoute()
     {
-        $this->routes(function () {
-            Route::middleware(['api', 'auth:sanctum', 'access.control'])
-                ->prefix('settings')
-                ->name('settings.')
-                ->group(base_path('routes/settings.php'));
-        });
+        Route::middleware(['api', 'auth:sanctum', 'access.control'])
+            ->prefix('settings')
+            ->name('settings.')
+            ->group(base_path('routes/settings.php'));
     }
 }
