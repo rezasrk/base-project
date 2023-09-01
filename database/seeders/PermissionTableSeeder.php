@@ -15,19 +15,15 @@ class PermissionTableSeeder extends Seeder
         $permissions = [
             [
                 'id' => 1,
-                'name' => 'settings',
-                'title' => 'Setting Menu',
-                'family' => 'setting',
-                'is_parent' => 1,
+                'name' => 'settings.menu',
                 'status' => 1,
+                'parent_id' => 0,
                 'guard_name' => 'sanctum',
             ],
             [
                 'id' => 2,
                 'name' => 'settings.role.store',
-                'title' => 'Role Store',
-                'family' => 'setting',
-                'is_parent' => 1,
+                'parent_id' => 1,
                 'status' => 1,
                 'guard_name' => 'sanctum',
             ],

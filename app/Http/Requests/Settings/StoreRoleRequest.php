@@ -15,4 +15,22 @@ class StoreRoleRequest extends BaseFormRequest
             'permissions.*' => ['required'],
         ];
     }
+
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'This name should be unique in this panel',
+                'example' => 'Writer',
+            ],
+            'permissions' => [
+                'description' => 'Permission',
+                'example' => [1],
+            ],
+            'status' => [
+                'description' => 'Status of role',
+                'status' => '{1=active},{0=inactive}',
+            ],
+        ];
+    }
 }
