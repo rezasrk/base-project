@@ -13,7 +13,7 @@ use App\Services\Actions\Settings\IndexPermissionService;
 class IndexPermissionController extends Controller
 {
     /**
-     * Store roles
+     * List permissions
      * 
      * @response{
      *   "status":"success",
