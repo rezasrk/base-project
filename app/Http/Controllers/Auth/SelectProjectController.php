@@ -10,7 +10,7 @@ use App\Services\Actions\Auth\SelectProjectService;
 /**
  * @group Auth
  *
- * @authenticate
+ * @authenticated
  */
 class SelectProjectController extends Controller
 {

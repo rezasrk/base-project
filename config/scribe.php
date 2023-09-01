@@ -215,7 +215,7 @@ return [
 
         /*
          * Set this to true if your API should be authenticated by default. If so, you must also set `enabled` (above) to true.
-         * You can then use @unauthenticated or @authenticated on individual endpoints to change their status from the default.
+         * You can then use @unauthenticated or @authenticatedd on individual endpoints to change their status from the default.
          */
         'default' => false,
 
@@ -266,7 +266,11 @@ return [
             {
                 "status": "success",
                 "message": "A short description",
-                "data": []
+                "data": [
+                    {
+                        "id":12
+                    }
+                ]
             }
 
             (422, Example error response)

@@ -31,7 +31,7 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
             'family' => $this->faker->name()
         ]);
 
-        $response = $this->actingAsUser($user)->postJson($this->getRoute(), [
+        $response = $this->actingAsUser($user)->putJson($this->getRoute(), [
             'username' => $newUsername,
             'email' => $newEmail,
             'name' => $newName,
@@ -68,7 +68,7 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
             'signature_path' => null,
         ]);
 
-        $response = $this->actingAsUser($user)->postJson($this->getRoute(), [
+        $response = $this->actingAsUser($user)->putJson($this->getRoute(), [
             'username' => $newUsername,
             'email' => $newEmail,
             'name' => $newName,
@@ -104,7 +104,7 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
             'username' => $newUsername
         ]);
 
-        $response = $this->actingAsUser($user)->postJson($this->getRoute(), [
+        $response = $this->actingAsUser($user)->putJson($this->getRoute(), [
             'username' => $newUsername,
             'email' => $newEmail,
             'name' => $newName,
@@ -136,7 +136,7 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
             'email' => $newEmail
         ]);
 
-        $response = $this->actingAsUser($user)->postJson($this->getRoute(), [
+        $response = $this->actingAsUser($user)->putJson($this->getRoute(), [
             'username' => $newUsername,
             'email' => $newEmail,
             'name' => $newName,
@@ -158,7 +158,7 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
     /** @test */
     public function unauthenticated_user_can_not_update_profile_information()
     {
-        $response = $this->postJson($this->getRoute());
+        $response = $this->putJson($this->getRoute());
 
         $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
@@ -187,7 +187,7 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
 
     public function update_user_profile_has_correct_form_request()
     {
-        $this->assertActionUsesFormRequest(UpdateUserProfileController::class,'__invoke',UpdateUserProfileRequest::class);
+        $this->assertActionUsesFormRequest(UpdateUserProfileController::class, '__invoke', UpdateUserProfileRequest::class);
     }
 
     private function getRoute()
