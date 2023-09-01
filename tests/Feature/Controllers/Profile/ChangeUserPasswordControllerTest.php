@@ -81,8 +81,8 @@ final class ChangeUserPasswordControllerTest extends BaseFeatureTestCase
     public function change_user_password_has_correct_validation_rules()
     {
         $this->assertEquals([
-            'old_password' => ['required', 'max:190'],
-            'new_password' => ['required', 'max:190',new StrongPasswordRule]
+            'old_password' => ['required', 'min:8', 'max:190'],
+            'new_password' => ['required', 'min:8', 'max:190', new StrongPasswordRule]
         ], (new ChangeUserPasswordRequest())->rules());
     }
 
