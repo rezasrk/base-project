@@ -10,9 +10,7 @@ class PermissionFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'title' => $this->faker->name(),
-            'family' => $this->faker->name(),
-            'is_parent' => 1,
+            'parent_id' => 0,
             'status' => 1,
             'guard_name' => 'sanctum',
         ];

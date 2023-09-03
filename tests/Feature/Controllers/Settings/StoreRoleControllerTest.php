@@ -21,7 +21,6 @@ final class StoreRoleControllerTest extends BaseFeatureTestCase
         $status = 1;
         $permission = Permission::factory()->create([
             'name' => 'write article',
-            'title' => 'Write Article',
         ]);
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
             'name' => $name,
