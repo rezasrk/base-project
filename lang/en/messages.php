@@ -7,6 +7,7 @@ return [
         'unauthenticated' => 'The user must be authenticated',
         'select_project' => 'The user does not access to this project',
         'access_denied' => 'You do not permission to this action',
+        'not_found' => 'Service is not available',
     ],
     'login_successfully' => 'Login successfully',
     'old_password' => 'The old password is wrong',

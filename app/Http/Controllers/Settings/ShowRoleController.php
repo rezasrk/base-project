@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
-use App\Services\Actions\Settings\IndexRoleService;
+use App\Services\Actions\Settings\ShowRoleService;
 
 /** 
  * @group Settings
  * 
  * @authenticated
  */
-class IndexRoleController extends Controller
+class ShowRoleController extends Controller
 {
     /**
      * List roles
@@ -18,8 +18,7 @@ class IndexRoleController extends Controller
      * @response{
      *   "status":"success",
      *   "message":"Role fetch successfully",
-     *   "data" : [
-     *        {
+     *   "data" : {
      *           "id":4,
      *           "name":"writer",
      *           "permissions":[
@@ -35,20 +34,13 @@ class IndexRoleController extends Controller
      *                }
      *           ]
      *        }
-     *    ],
-     *    "pagination_information":{
-     *       "current_page":1,
-     *       "last_page":1,
-     *       "per_page":30
-     *       "total":1
-     *    }
      * }
      */
-    public function __invoke(IndexRoleService $indexRoleService)
+    public function __invoke(int $id, ShowRoleService $showRoleService)
     {
         return response()->resource(
             __('messages.fetch', ['title' => __('title.role')]),
-            $indexRoleService->handle()
+            $showRoleService->handle($id)
         );
     }
 }

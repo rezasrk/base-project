@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Controllers\Settings;
 
+use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -12,7 +13,10 @@ final class IndexRoleControllerTest extends BaseFeatureTestCase
     /** @test */
     public function authenticated_user_can_see_all_roles_list()
     {
-        $role = Role::factory()->create();
+        $permission = Permission::factory()->create([
+            'name' => 'write',
+        ]);
+        $role = Role::factory()->hasAttached($permission)->create();
 
         $response = $this->actingAsSuperUser()->getJson($this->getRoute());
 
@@ -23,7 +27,14 @@ final class IndexRoleControllerTest extends BaseFeatureTestCase
             'data' => [
                 [
                     'id' => $role->id,
-                    'name' => $role->name
+                    'name' => $role->name,
+                    'permissions' => [
+                        [
+                            'id' => $permission->id,
+                            'name' => 'permissions.' . $permission->name,
+                            'parent_id' => $permission->parent_id
+                        ]
+                    ]
                 ]
             ],
             'pagination_information' => [
