@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature\Controllers\Settings;
+namespace Tests\Feature\Controllers\Settings\Roles;
 
-use App\Http\Controllers\Settings\StoreRoleController;
-use App\Http\Requests\Settings\StoreRoleRequest;
+use App\Http\Controllers\Settings\Roles\StoreRoleController;
+use App\Http\Requests\Settings\Roles\StoreRoleRequest;
 use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -85,6 +85,6 @@ final class StoreRoleControllerTest extends BaseFeatureTestCase
 
     private function getRoute()
     {
-        return route('settings.role.store');
+        return route('settings.v1.role.store');
     }
 }

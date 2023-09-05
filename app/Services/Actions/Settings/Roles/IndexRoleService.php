@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Actions\Settings;
+namespace App\Services\Actions\Settings\Roles;
 
 use App\Http\Resources\Settings\RoleResourceCollection;
 use App\Models\Role;

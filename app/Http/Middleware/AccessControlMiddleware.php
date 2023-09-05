@@ -18,7 +18,7 @@ class AccessControlMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $permissions = Permission::query()->get()->pluck('name')->toArray();
-        $permission = $request->route()->getName();
+        $permission = preg_replace('/\.v\d+\./', '.', $request->route()->getName());
 
         if (in_array($permission, $permissions) && !$request->user()->hasPermissionTo($permission, 'sanctum')) {
             return response()->error(__('messages.exceptions.access_denied'), JsonResponse::HTTP_FORBIDDEN);

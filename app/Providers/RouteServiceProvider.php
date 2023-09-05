@@ -37,8 +37,6 @@ class RouteServiceProvider extends ServiceProvider
     private function registerSettingsRoute()
     {
         Route::middleware(['api', 'auth:sanctum', 'access.control'])
-            ->prefix('settings')
-            ->name('settings.')
-            ->group(base_path('routes/settings.php'));
+            ->group(base_path('routes/settings/settings_v1.php'));
     }
 }

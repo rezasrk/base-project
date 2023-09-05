@@ -3,14 +3,19 @@
 namespace Tests\Feature\Controllers\Settings;
 
 use App\Enum\RoleEnum;
+use App\Http\Controllers\Settings\Roles\UpdateRoleController;
+use App\Http\Requests\Settings\Roles\UpdateRoleRequest;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
+use Tests\Feature\AdditionalAssertion;
 use Tests\Feature\BaseFeatureTestCase;
 
 final class UpdateRoleControllerTest extends BaseFeatureTestCase
 {
+    use AdditionalAssertion;
+
     /** @test */
     public function authenticated_user_can_update_role_successfully()
     {
@@ -111,7 +116,7 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
             'status' => 1,
             'permissions' => [
                 $permission->id
-            ]
+            ],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_FORBIDDEN);
@@ -121,8 +126,25 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
         ]);
     }
 
+    /** @test */
+    public function update_roles_has_correct_validation_rules()
+    {
+        $this->assertEquals([
+            'name' => ['required', 'unique:roles,name'],
+            'permissions' => ['present', 'array'],
+            'status' => ['required', 'in:1,0'],
+            'permissions.*' => ['required'],
+        ], (new UpdateRoleRequest())->rules());
+    }
+
+    /** @test */
+    public function update_roles_has_correct_form_request()
+    {
+        $this->assertActionUsesFormRequest(UpdateRoleController::class, '__invoke', UpdateRoleRequest::class);
+    }
+
     private function getRoute(int $roleId)
     {
-        return route('settings.role.update', $roleId);
+        return route('settings.v1.role.update', $roleId);
     }
 }

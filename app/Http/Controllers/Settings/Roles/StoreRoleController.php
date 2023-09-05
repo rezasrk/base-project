@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace App\Http\Controllers\Settings\Roles;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\StoreRoleRequest;
-use App\Services\Actions\Settings\StoreRoleService;
+use App\Http\Requests\Settings\Roles\StoreRoleRequest;
+use App\Services\Actions\Settings\Roles\StoreRoleService;
 
 /** 
  * @group Settings

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace App\Http\Controllers\Settings\Roles;
 
 use App\Http\Controllers\Controller;
-use App\Services\Actions\Settings\IndexPermissionService;
+use App\Services\Actions\Settings\Roles\IndexPermissionService;
 
 /** 
  * @group Settings

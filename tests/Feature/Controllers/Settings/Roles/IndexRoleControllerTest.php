@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Controllers\Settings;
+namespace Tests\Feature\Controllers\Settings\Roles;
 
 use App\Models\Permission;
 use App\Models\Role;
@@ -74,6 +74,6 @@ final class IndexRoleControllerTest extends BaseFeatureTestCase
 
     private function getRoute()
     {
-        return route('settings.role.index');
+        return route('settings.v1.role.index');
     }
 }

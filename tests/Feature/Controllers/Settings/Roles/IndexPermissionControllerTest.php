@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Controllers\Settings;
+namespace Tests\Feature\Controllers\Settings\Roles;
 
 use Illuminate\Http\JsonResponse;
 use Tests\Feature\BaseFeatureTestCase;
@@ -31,6 +31,6 @@ final class IndexPermissionControllerTest extends BaseFeatureTestCase
 
     private function getRoute()
     {
-        return route('settings.permission.index');
+        return route('settings.v1.permission.index');
     }
 }

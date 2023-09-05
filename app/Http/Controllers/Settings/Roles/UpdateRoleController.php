@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace App\Http\Controllers\Settings\Roles;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\UpdateRoleRequest;
-use App\Services\Actions\Settings\UpdateRoleService;
+use App\Http\Requests\Settings\Roles\UpdateRoleRequest;
+use App\Services\Actions\Settings\Roles\UpdateRoleService;
 
 /** 
  * @group Settings

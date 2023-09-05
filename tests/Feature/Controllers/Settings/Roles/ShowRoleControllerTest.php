@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Controllers\Settings;
+namespace Tests\Feature\Controllers\Settings\Roles;
 
 use App\Enum\RoleEnum;
 use App\Models\Permission;
@@ -65,6 +65,6 @@ final class ShowRoleControllerTest extends BaseFeatureTestCase
 
     private function getRoute(int $roleId)
     {
-        return route('settings.role.show', $roleId);
+        return route('settings.v1.role.show', $roleId);
     }
 }
