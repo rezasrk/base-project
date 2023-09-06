@@ -34,7 +34,6 @@ class SuperUserSeeder extends Seeder
         $projectIds = Project::query()->get()->pluck('id')->toArray();
         $permissions = Permission::query()->get()->pluck('id')->toArray();
 
-
         $user->projects()->sync($projectIds);
         $user->roles()->sync([1]);
         $role->permissions()->sync($permissions);

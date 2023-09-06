@@ -8,8 +8,9 @@ class StoreProjectRequest extends BaseFormRequest
 {
     public function rules()
     {
+
         return [
-            'title' => ['required', 'unique:projects,project_title', 'max:190']
+            'title' => ['required', 'unique:projects,project_title', 'max:190'],
         ];
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Controllers\Settings;
+namespace Tests\Feature\Controllers\Settings\Roles;
 
 use App\Enum\RoleEnum;
 use App\Http\Controllers\Settings\Roles\UpdateRoleController;
@@ -23,15 +23,15 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
         $newRoleName = 'Article writer';
         $permission = Permission::factory()->create();
         $role = Role::factory()->create([
-            'name' => $oldRoleName
+            'name' => $oldRoleName,
         ]);
 
         $response = $this->actingAsSuperUser()->putJson($this->getRoute($role->id), [
             'name' => $newRoleName,
             'status' => 1,
             'permissions' => [
-                $permission->id
-            ]
+                $permission->id,
+            ],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
@@ -46,7 +46,7 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
         ]);
         $this->assertDatabaseHas('role_has_permissions', [
             'role_id' => $role->id,
-            'permission_id' => $permission->id
+            'permission_id' => $permission->id,
         ]);
     }
 
@@ -60,8 +60,8 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
             'name' => $newRoleName,
             'status' => 1,
             'permissions' => [
-                $permission->id
-            ]
+                $permission->id,
+            ],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_NOT_FOUND);
@@ -71,7 +71,7 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
         ]);
         $this->assertDatabaseMissing('roles', [
             'id' => RoleEnum::SUPER_ROLE->value,
-            'name' => $newRoleName
+            'name' => $newRoleName,
         ]);
     }
 
@@ -85,8 +85,8 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
             'name' => $newRoleName,
             'status' => 1,
             'permissions' => [
-                $permission->id
-            ]
+                $permission->id,
+            ],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_NOT_FOUND);
@@ -96,7 +96,7 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
         ]);
         $this->assertDatabaseMissing('roles', [
             'id' => RoleEnum::SUPER_ROLE->value,
-            'name' => $newRoleName
+            'name' => $newRoleName,
         ]);
     }
 
@@ -108,21 +108,21 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
         $newRoleName = 'Article writer';
         $permission = Permission::factory()->create();
         $role = Role::factory()->create([
-            'name' => $oldRoleName
+            'name' => $oldRoleName,
         ]);
 
         $response = $this->actingAsUser($user)->putJson($this->getRoute($role->id), [
             'name' => $newRoleName,
             'status' => 1,
             'permissions' => [
-                $permission->id
+                $permission->id,
             ],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_FORBIDDEN);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.access_denied')
+            'message' => __('messages.exceptions.access_denied'),
         ]);
     }
 

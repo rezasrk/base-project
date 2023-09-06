@@ -14,21 +14,21 @@ final class StoreProjectControllerTest extends BaseFeatureTestCase
     use AdditionalAssertion;
 
     /** @test */
-    public function authenticated_user_can_store_projects_successfully()
+    public function authenticated_user_can_store_project_successfully()
     {
         $title = 'project-title';
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
-            'title' => $title
+            'title' => $title,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.store', ['title' => __('title.project')])
+            'message' => __('messages.store', ['title' => __('title.project')]),
         ]);
         $this->assertDatabaseHas('projects', [
-            'project_title' => $title
+            'project_title' => $title,
         ]);
     }
 
@@ -45,7 +45,7 @@ final class StoreProjectControllerTest extends BaseFeatureTestCase
     }
 
     /** @test */
-    public function authenticated_user_can_not_store_projects_when_the_user_has_not_permission()
+    public function authenticated_user_can_not_store_project_when_the_user_has_not_permission()
     {
         $user = User::factory()->create();
 
@@ -54,7 +54,7 @@ final class StoreProjectControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_FORBIDDEN);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.access_denied')
+            'message' => __('messages.exceptions.access_denied'),
         ]);
     }
 
@@ -62,7 +62,7 @@ final class StoreProjectControllerTest extends BaseFeatureTestCase
     public function store_projects_has_correct_validation_rules()
     {
         $this->assertEquals([
-            'title' => ['required', 'unique:projects,project_title', 'max:190']
+            'title' => ['required', 'unique:projects,project_title', 'max:190'],
         ], (new StoreProjectRequest())->rules());
     }
 

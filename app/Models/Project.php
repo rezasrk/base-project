@@ -11,5 +11,9 @@ class Project extends Model
     use HasFactory;
     use ProjectRelations;
 
+    protected $casts = [
+        'settings' => 'array',
+    ];
+
     protected $guarded = [];
 }

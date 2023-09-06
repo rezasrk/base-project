@@ -9,7 +9,7 @@ class StoreProjectService
     public function handle(string $title)
     {
         Project::query()->create([
-            'project_title' => $title
+            'project_title' => $title,
         ]);
     }
 }

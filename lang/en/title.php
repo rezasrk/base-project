@@ -6,5 +6,6 @@ return [
     'user_password' => "User's password",
     'role' => 'Role',
     'permission' => 'Permission',
-    'project' => 'Project'
+    'project' => 'Project',
+    'project_settings' => 'Project settings',
 ];

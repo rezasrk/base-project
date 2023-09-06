@@ -15,7 +15,7 @@ class StrongPasswordRule implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (!StrongPasswordService::check($value)) {
+        if (! StrongPasswordService::check($value)) {
             $fail(__('validation.strong_password'));
         }
     }

@@ -9,7 +9,7 @@ use App\Services\Actions\Profile\UpdateUserProfileService;
 
 /**
  * @group Profile
- * 
+ *
  * @authenticated
  */
 class UpdateUserProfileController extends Controller

@@ -6,16 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Settings\Roles\StoreRoleRequest;
 use App\Services\Actions\Settings\Roles\StoreRoleService;
 
-/** 
+/**
  * @group Settings
- * 
+ *
  * @authenticated
  */
 class StoreRoleController extends Controller
 {
     /**
      * Store roles
-     * 
+     *
      * @response{
      *   "status":"success",
      *   "message":"Role store successfully"

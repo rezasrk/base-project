@@ -10,11 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AccessControlMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
         $permissions = Permission::query()->get()->pluck('name')->toArray();

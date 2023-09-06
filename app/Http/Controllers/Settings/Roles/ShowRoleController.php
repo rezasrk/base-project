@@ -5,16 +5,16 @@ namespace App\Http\Controllers\Settings\Roles;
 use App\Http\Controllers\Controller;
 use App\Services\Actions\Settings\Roles\ShowRoleService;
 
-/** 
+/**
  * @group Settings
- * 
+ *
  * @authenticated
  */
 class ShowRoleController extends Controller
 {
     /**
      * List roles
-     * 
+     *
      * @response{
      *   "status":"success",
      *   "message":"Role fetch successfully",

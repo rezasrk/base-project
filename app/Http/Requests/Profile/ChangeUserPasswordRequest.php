@@ -11,7 +11,7 @@ class ChangeUserPasswordRequest extends BaseFormRequest
     {
         return [
             'old_password' => ['required', 'min:8', 'max:190'],
-            'new_password' => ['required', 'min:8', 'max:190', new StrongPasswordRule]
+            'new_password' => ['required', 'min:8', 'max:190', new StrongPasswordRule],
         ];
     }
 
@@ -25,7 +25,7 @@ class ChangeUserPasswordRequest extends BaseFormRequest
             'new_password' => [
                 'description' => "The new user's password ",
                 'example' => 'Okdighr542',
-            ]
+            ],
         ];
     }
 }

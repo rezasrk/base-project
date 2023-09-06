@@ -25,7 +25,7 @@ final class StoreRoleControllerTest extends BaseFeatureTestCase
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
             'name' => $name,
             'permissions' => [$permission->id],
-            'status' => $status
+            'status' => $status,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
@@ -36,7 +36,7 @@ final class StoreRoleControllerTest extends BaseFeatureTestCase
         $this->assertDatabaseHas('roles', [
             'name' => $name,
             'guard_name' => 'sanctum',
-            'status' => $status
+            'status' => $status,
         ]);
     }
 
@@ -70,7 +70,7 @@ final class StoreRoleControllerTest extends BaseFeatureTestCase
     }
 
     /** @test */
-    public function authenticated_user_can_not_store_roles_when_user_does_not_access()
+    public function authenticated_user_can_not_store_roles_when_user_has_not_permission()
     {
         $user = User::factory()->create();
 

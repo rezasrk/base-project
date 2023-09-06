@@ -11,8 +11,8 @@ use Tests\TestCase;
 
 class BaseFeatureTestCase extends TestCase
 {
-    use RefreshDatabase;
     use DatabaseTruncation;
+    use RefreshDatabase;
 
     protected function setUp(): void
     {

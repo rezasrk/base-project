@@ -7,8 +7,9 @@ use Tests\Unit\BaseUnitTestCase;
 
 final class StrongPasswordServiceTest extends BaseUnitTestCase
 {
-    /** 
-     * @test 
+    /**
+     * @test
+     *
      * @dataProvider strongPasswordProvider
      */
     public function strong_password_can_get_true_when_password_is_strong(string $password)
@@ -18,6 +19,7 @@ final class StrongPasswordServiceTest extends BaseUnitTestCase
 
     /**
      * @test
+     *
      * @dataProvider weakPasswordProvider
      */
     public function strong_password_can_get_false_when_password_is_weak(string $password)

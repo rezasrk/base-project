@@ -19,8 +19,8 @@ class BaseResourceCollection extends ResourceCollection
                 'current_page' => $default['meta']['current_page'],
                 'last_page' => $default['meta']['last_page'],
                 'per_page' => $default['meta']['per_page'],
-                'total' => $default['meta']['total']
-            ]
+                'total' => $default['meta']['total'],
+            ],
         ];
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Enum\RoleEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RoleFactory extends Factory

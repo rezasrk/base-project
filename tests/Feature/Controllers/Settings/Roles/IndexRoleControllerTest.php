@@ -31,18 +31,18 @@ final class IndexRoleControllerTest extends BaseFeatureTestCase
                     'permissions' => [
                         [
                             'id' => $permission->id,
-                            'name' => 'permissions.' . $permission->name,
-                            'parent_id' => $permission->parent_id
-                        ]
-                    ]
-                ]
+                            'name' => 'permissions.'.$permission->name,
+                            'parent_id' => $permission->parent_id,
+                        ],
+                    ],
+                ],
             ],
             'pagination_information' => [
                 'current_page' => 1,
                 'last_page' => 1,
                 'per_page' => 30,
-                'total' => 1
-            ]
+                'total' => 1,
+            ],
         ]);
     }
 
@@ -56,7 +56,7 @@ final class IndexRoleControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_FORBIDDEN);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.access_denied')
+            'message' => __('messages.exceptions.access_denied'),
         ]);
     }
 

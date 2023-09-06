@@ -15,7 +15,7 @@ class UserProfileResource extends JsonResource
             'email' => $this->email,
             'name' => $this->name,
             'family' => $this->family,
-            'sign' => $this->signature_path
+            'sign' => $this->signature_path,
         ];
     }
 }

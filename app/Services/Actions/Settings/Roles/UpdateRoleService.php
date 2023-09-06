@@ -13,7 +13,7 @@ class UpdateRoleService
         $role->update([
             'name' => $name,
             'guard_name' => 'sanctum',
-            'status' => $status
+            'status' => $status,
         ]);
 
         $role->permissions()->sync($permissions);

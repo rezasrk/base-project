@@ -25,8 +25,8 @@ final class ShowUserProfileControllerTest extends BaseFeatureTestCase
                 'email' => $user->email,
                 'name' => $user->name,
                 'family' => $user->family,
-                'sign' => $user->signature_path
-            ]
+                'sign' => $user->signature_path,
+            ],
         ]);
     }
 

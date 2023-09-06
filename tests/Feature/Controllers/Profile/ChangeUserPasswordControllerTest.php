@@ -22,18 +22,18 @@ final class ChangeUserPasswordControllerTest extends BaseFeatureTestCase
         $oldPasswordHash = '$2y$10$TP4OETFuOgh52nM9Wq69AeOR.Xqsg.FrHKocAVb.GP2eDoRT3T6uK';
         $newPassword = 'AJdkca574532sk';
         $user = User::factory()->create([
-            'password' => $oldPasswordHash
+            'password' => $oldPasswordHash,
         ]);
 
         $response = $this->actingAsUser($user)->putJson($this->getRoute(), [
             'old_password' => $oldPassword,
-            'new_password' => $newPassword
+            'new_password' => $newPassword,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.update', ['title' => __('title.user_password')])
+            'message' => __('messages.update', ['title' => __('title.user_password')]),
         ]);
         $this->assertTrue(Hash::check($newPassword, $user->fresh()->password));
     }
@@ -45,12 +45,12 @@ final class ChangeUserPasswordControllerTest extends BaseFeatureTestCase
         $oldPasswordHash = '$2y$10$TP4OETFuOgh52nM9Wq69AeOR.Xqsg.FrHKocAVb.GP2eDoRT3T6uK';
         $newPassword = 'AJdkca574532sk';
         $user = User::factory()->create([
-            'password' => $oldPasswordHash . '-extra'
+            'password' => $oldPasswordHash.'-extra',
         ]);
 
         $response = $this->actingAsUser($user)->putJson($this->getRoute(), [
             'old_password' => $oldPassword,
-            'new_password' => $newPassword
+            'new_password' => $newPassword,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -59,8 +59,8 @@ final class ChangeUserPasswordControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'old_password' => [
-                    __('messages.old_password_wrong')
-                ]
+                    __('messages.old_password_wrong'),
+                ],
             ],
         ]);
     }
@@ -82,7 +82,7 @@ final class ChangeUserPasswordControllerTest extends BaseFeatureTestCase
     {
         $this->assertEquals([
             'old_password' => ['required', 'min:8', 'max:190'],
-            'new_password' => ['required', 'min:8', 'max:190', new StrongPasswordRule]
+            'new_password' => ['required', 'min:8', 'max:190', new StrongPasswordRule],
         ], (new ChangeUserPasswordRequest())->rules());
     }
 

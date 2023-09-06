@@ -5,16 +5,16 @@ namespace App\Http\Controllers\Settings\Roles;
 use App\Http\Controllers\Controller;
 use App\Services\Actions\Settings\Roles\IndexPermissionService;
 
-/** 
+/**
  * @group Settings
- * 
+ *
  * @authenticated
  */
 class IndexPermissionController extends Controller
 {
     /**
      * List permissions
-     * 
+     *
      * @response{
      *   "status":"success",
      *   "message":"Permission fetch successfully",

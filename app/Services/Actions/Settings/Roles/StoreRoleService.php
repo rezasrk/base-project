@@ -11,7 +11,7 @@ class StoreRoleService
         $role = Role::query()->create([
             'name' => $name,
             'guard_name' => 'sanctum',
-            'status' => $status
+            'status' => $status,
         ]);
 
         $role->permissions()->sync($permissions);

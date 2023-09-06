@@ -3,7 +3,6 @@
 namespace App\Models\Traits\User;
 
 use App\Models\Project;
-use App\Models\Role;
 
 trait UserRelations
 {

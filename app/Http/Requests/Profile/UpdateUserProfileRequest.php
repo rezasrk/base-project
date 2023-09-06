@@ -15,11 +15,11 @@ class UpdateUserProfileRequest extends BaseFormRequest
         }
 
         return [
-            'username' => ['required', 'max:100', 'unique:users,username,' . $userId . ',id'],
-            'email' => ['required', 'max:190', 'unique:users,email,' . $userId . ',id'],
+            'username' => ['required', 'max:100', 'unique:users,username,'.$userId.',id'],
+            'email' => ['required', 'max:190', 'unique:users,email,'.$userId.',id'],
             'name' => ['required', 'max:100'],
             'family' => ['required', 'max:100'],
-            'user_sign' => ['nullable']
+            'user_sign' => ['nullable'],
         ];
     }
 
@@ -44,8 +44,8 @@ class UpdateUserProfileRequest extends BaseFormRequest
             ],
             'user_sign' => [
                 'description' => 'Sign of the user',
-                'example' => '/var/www/sing.jpeg'
-            ]
+                'example' => '/var/www/sing.jpeg',
+            ],
         ];
     }
 }

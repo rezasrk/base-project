@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 /**
  * @group Profile
- * 
+ *
  * @authenticated
  */
 class ShowUserProfileController extends Controller

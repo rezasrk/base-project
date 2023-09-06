@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enum\BaseinfoTypesEnum;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -840,8 +841,8 @@ class BaseinfoTableSeeder extends Seeder
             ],
             [
                 'id' => 82,
-                'type' => 'condition_request',
-                'value' => 'وضعیت درخواست ها',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Request Status',
                 'priority' => 0,
                 'parent_id' => 0,
                 'user_can_add' => 0,
@@ -850,69 +851,53 @@ class BaseinfoTableSeeder extends Seeder
             ],
             [
                 'id' => 83,
-                'type' => 'condition_request',
-                'value' => 'ارسال شده',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Sent',
                 'priority' => 1,
                 'parent_id' => 82,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#4db8ff',
-                    'permission' => 'send-requests',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 84,
-                'type' => 'condition_request',
-                'value' => 'تایید شده',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Accept',
                 'priority' => 3,
                 'parent_id' => 82,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#0077b3',
-                    'permission' => 'accept-requests',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 86,
-                'type' => 'condition_request',
-                'value' => 'واحد مالی',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Financial',
                 'priority' => 4,
                 'parent_id' => 82,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#bf80ff',
-                    'status' => '',
-                    'permission' => 'unit-financial-request',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 88,
-                'type' => 'condition_request',
-                'value' => 'رد شده',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Reject',
                 'priority' => 5,
                 'parent_id' => 83,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#ff6666',
-                    'permission' => 'reject-requests',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 89,
-                'type' => 'condition_request',
-                'value' => 'مسدود شده',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Block',
                 'priority' => 6,
                 'parent_id' => 83,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#ffad33',
-                    'permission' => 'block-requests',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 90,
@@ -962,31 +947,23 @@ class BaseinfoTableSeeder extends Seeder
             ],
             [
                 'id' => 94,
-                'type' => 'condition_request',
-                'value' => 'ابلاغ به مامور خرید',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Assign to buyer',
                 'priority' => 6,
                 'parent_id' => 83,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#e6b3ff',
-                    'status' => '',
-                    'permission' => 'assign-request',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 95,
-                'type' => 'condition_request',
-                'value' => 'تامین شده',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Supply',
                 'priority' => 7,
                 'parent_id' => 83,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#00cc00',
-                    'status' => '',
-                    'permission' => 'supplied-requests',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 96,
@@ -1000,8 +977,8 @@ class BaseinfoTableSeeder extends Seeder
             ],
             [
                 'id' => 97,
-                'type' => 'condition_request',
-                'value' => 'تامین ناقص',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Incomplete supply',
                 'priority' => 8,
                 'parent_id' => 82,
                 'user_can_add' => 0,
@@ -1124,17 +1101,13 @@ class BaseinfoTableSeeder extends Seeder
             ],
             [
                 'id' => 110,
-                'type' => 'condition_request',
-                'value' => 'تایید مالی',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'Accept Financial',
                 'priority' => 2,
                 'parent_id' => 82,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#00b300',
-                    'status' => '',
-                    'permission' => 'accept-financial-request',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 111,
@@ -1228,16 +1201,13 @@ class BaseinfoTableSeeder extends Seeder
             ],
             [
                 'id' => 120,
-                'type' => 'condition_request',
-                'value' => 'تایید اولیه',
+                'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
+                'value' => 'First accept',
                 'priority' => 2,
                 'parent_id' => 82,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#4db8ff',
-                    'permission' => 'first-accept-requests',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 121,
