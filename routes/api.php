@@ -3,9 +3,9 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SelectProjectController;
 use App\Http\Controllers\Auth\UserProjectsController;
-use App\Http\Controllers\Profile\ChangeUserPasswordController;
-use App\Http\Controllers\Profile\ShowUserProfileController;
-use App\Http\Controllers\Profile\UpdateUserProfileController;
+use App\Http\Controllers\Profile\V1\ChangeUserPasswordController;
+use App\Http\Controllers\Profile\V1\ShowUserProfileController;
+use App\Http\Controllers\Profile\V1\UpdateUserProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', LoginController::class)->name('login');

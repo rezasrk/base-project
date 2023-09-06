@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Settings\Roles\IndexPermissionController;
-use App\Http\Controllers\Settings\Roles\IndexRoleController;
-use App\Http\Controllers\Settings\Roles\ShowRoleController;
-use App\Http\Controllers\Settings\Roles\StoreRoleController;
-use App\Http\Controllers\Settings\Roles\UpdateRoleController;
+use App\Http\Controllers\Settings\V1\Roles\IndexPermissionController;
+use App\Http\Controllers\Settings\V1\Roles\IndexRoleController;
+use App\Http\Controllers\Settings\V1\Roles\ShowRoleController;
+use App\Http\Controllers\Settings\V1\Roles\StoreRoleController;
+use App\Http\Controllers\Settings\V1\Roles\UpdateRoleController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('roles', StoreRoleController::class)->name('roles.store');
