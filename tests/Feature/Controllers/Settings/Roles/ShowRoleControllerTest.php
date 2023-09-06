@@ -65,6 +65,6 @@ final class ShowRoleControllerTest extends BaseFeatureTestCase
 
     private function getRoute(int $roleId)
     {
-        return route('settings.v1.role.show', $roleId);
+        return route('settings.v1.roles.show', $roleId);
     }
 }

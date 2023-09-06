@@ -74,6 +74,6 @@ final class IndexRoleControllerTest extends BaseFeatureTestCase
 
     private function getRoute()
     {
-        return route('settings.v1.role.index');
+        return route('settings.v1.roles.index');
     }
 }

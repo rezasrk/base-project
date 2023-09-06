@@ -85,6 +85,6 @@ final class StoreRoleControllerTest extends BaseFeatureTestCase
 
     private function getRoute()
     {
-        return route('settings.v1.role.store');
+        return route('settings.v1.roles.store');
     }
 }

@@ -145,6 +145,6 @@ final class UpdateRoleControllerTest extends BaseFeatureTestCase
 
     private function getRoute(int $roleId)
     {
-        return route('settings.v1.role.update', $roleId);
+        return route('settings.v1.roles.update', $roleId);
     }
 }
