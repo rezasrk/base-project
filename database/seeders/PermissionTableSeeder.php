@@ -57,7 +57,14 @@ class PermissionTableSeeder extends Seeder
             ],
             [
                 'id' => 7,
-                'name' => 'settings.project.update',
+                'name' => 'settings.projects.update',
+                'parent_id' => 1,
+                'status' => 1,
+                'guard_name' => 'sanctum',
+            ],
+            [
+                'id' => 8,
+                'name' => 'settings.projects.index',
                 'parent_id' => 1,
                 'status' => 1,
                 'guard_name' => 'sanctum',

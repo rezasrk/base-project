@@ -40,6 +40,18 @@ final class ShowRoleControllerTest extends BaseFeatureTestCase
     }
 
     /** @test */
+    public function unauthenticated_user_can_not_see_role()
+    {
+        $response = $this->getJson($this->getRoute(2344));
+
+        $response->assertStatus(JsonResponse::HTTP_UNAUTHORIZED);
+        $response->assertExactJson([
+            'status' => 'error',
+            'message' => __('messages.exceptions.unauthenticated'),
+        ]);
+    }
+
+    /** @test */
     public function authenticated_user_can_not_see_super_role()
     {
         $response = $this->actingAsSuperUser()->getJson($this->getRoute(RoleEnum::SUPER_ROLE->value));

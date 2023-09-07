@@ -148,6 +148,6 @@ final class UpdateProjectControllerTest extends BaseFeatureTestCase
 
     private function getRoute(int $projectId)
     {
-        return route('settings.v1.project.update', $projectId);
+        return route('settings.v1.projects.update', $projectId);
     }
 }
