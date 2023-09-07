@@ -452,7 +452,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 48,
                 'type' => 'unit_requester',
-                'value' => 'مدیریت'.' ( 100 ) ',
+                'value' => 'مدیریت' . ' ( 100 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -464,7 +464,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 49,
                 'type' => 'unit_requester',
-                'value' => 'امور قرارداد ها و امور پیمان'.' ( 101 ) ',
+                'value' => 'امور قرارداد ها و امور پیمان' . ' ( 101 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -476,7 +476,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 50,
                 'type' => 'unit_requester',
-                'value' => 'روابط عمومی'.' ( 102 ) ',
+                'value' => 'روابط عمومی' . ' ( 102 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -488,7 +488,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 51,
                 'type' => 'unit_requester',
-                'value' => 'بازار یابی مناقصات'.' ( 103 ) ',
+                'value' => 'بازار یابی مناقصات' . ' ( 103 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -500,7 +500,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 52,
                 'type' => 'unit_requester',
-                'value' => 'کنترل و تضمین کیفیت'.' ( 104 ) ',
+                'value' => 'کنترل و تضمین کیفیت' . ' ( 104 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -512,7 +512,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 53,
                 'type' => 'unit_requester',
-                'value' => 'برنامه ریزی و کنترل پروژه'.' ( 105 ) ',
+                'value' => 'برنامه ریزی و کنترل پروژه' . ' ( 105 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -524,7 +524,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 54,
                 'type' => 'unit_requester',
-                'value' => 'فنی مهندسی'.' ( 106 ) ',
+                'value' => 'فنی مهندسی' . ' ( 106 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -536,7 +536,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 56,
                 'type' => 'unit_requester',
-                'value' => 'الکتریکال'.' ( 107 ) ',
+                'value' => 'الکتریکال' . ' ( 107 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -548,7 +548,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 57,
                 'type' => 'unit_requester',
-                'value' => 'ابزار دقیق'.' ( 108 ) ',
+                'value' => 'ابزار دقیق' . ' ( 108 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -560,7 +560,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 58,
                 'type' => 'unit_requester',
-                'value' => 'سیویل - ص'.' ( 109 ) ',
+                'value' => 'سیویل - ص' . ' ( 109 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -572,7 +572,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 59,
                 'type' => 'unit_requester',
-                'value' => 'مکانیکال'.' ( 110 ) ',
+                'value' => 'مکانیکال' . ' ( 110 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -584,7 +584,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 60,
                 'type' => 'unit_requester',
-                'value' => 'تامین تجهیزات داخلی'.' ( 111 ) ',
+                'value' => 'تامین تجهیزات داخلی' . ' ( 111 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -596,7 +596,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 61,
                 'type' => 'unit_requester',
-                'value' => 'تامین تجهیزات خارجی'.' ( 112 ) ',
+                'value' => 'تامین تجهیزات خارجی' . ' ( 112 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -608,7 +608,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 62,
                 'type' => 'unit_requester',
-                'value' => 'برش'.' ( 113 ) ',
+                'value' => 'برش' . ' ( 113 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -620,7 +620,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 63,
                 'type' => 'unit_requester',
-                'value' => 'ساخت'.' ( 114 ) ',
+                'value' => 'ساخت' . ' ( 114 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -632,7 +632,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 64,
                 'type' => 'unit_requester',
-                'value' => 'دفتر فنی'.' ( 115 ) ',
+                'value' => 'دفتر فنی' . ' ( 115 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -644,7 +644,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 65,
                 'type' => 'unit_requester',
-                'value' => 'مصرفی انبار خرید تهران '.' ( 116 ) ',
+                'value' => 'مصرفی انبار خرید تهران ' . ' ( 116 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -656,7 +656,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 66,
                 'type' => 'unit_requester',
-                'value' => 'مالی'.' ( 117 ) ',
+                'value' => 'مالی' . ' ( 117 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -668,7 +668,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 67,
                 'type' => 'unit_requester',
-                'value' => 'اداری'.' ( 118 ) ',
+                'value' => 'اداری' . ' ( 118 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -680,7 +680,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 68,
                 'type' => 'unit_requester',
-                'value' => 'پشتیبانی'.' ( 119 ) ',
+                'value' => 'پشتیبانی' . ' ( 119 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -692,7 +692,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 69,
                 'type' => 'unit_requester',
-                'value' => 'خدماتی'.' ( 120 ) ',
+                'value' => 'خدماتی' . ' ( 120 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -704,7 +704,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 70,
                 'type' => 'unit_requester',
-                'value' => 'IT'.' ( 121 ) ',
+                'value' => 'IT' . ' ( 121 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -716,7 +716,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 71,
                 'type' => 'unit_requester',
-                'value' => 'تخصصی مالی'.' ( 122 ) ',
+                'value' => 'تخصصی مالی' . ' ( 122 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -728,7 +728,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 72,
                 'type' => 'unit_requester',
-                'value' => 'سازه'.' ( 123 ) ',
+                'value' => 'سازه' . ' ( 123 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -740,7 +740,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 73,
                 'type' => 'unit_requester',
-                'value' => 'نصب'.' ( 124 ) ',
+                'value' => 'نصب' . ' ( 124 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -752,7 +752,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 74,
                 'type' => 'unit_requester',
-                'value' => 'سیویل - غ'.' ( 125 ) ',
+                'value' => 'سیویل - غ' . ' ( 125 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -764,7 +764,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 75,
                 'type' => 'unit_requester',
-                'value' => 'ماشین آلات و تجهیزات تولید'.' ( 126 ) ',
+                'value' => 'ماشین آلات و تجهیزات تولید' . ' ( 126 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -776,7 +776,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 76,
                 'type' => 'unit_requester',
-                'value' => 'ماشین آلات'.' ( 127 ) ',
+                'value' => 'ماشین آلات' . ' ( 127 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -788,7 +788,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 77,
                 'type' => 'unit_requester',
-                'value' => 'قطعات یدکی راه‌اندازی'.' ( 128 ) ',
+                'value' => 'قطعات یدکی راه‌اندازی' . ' ( 128 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -810,7 +810,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 79,
                 'type' => 'unit_requester',
-                'value' => 'مصرفی انبار سایت '.' ( 200 ) ',
+                'value' => 'مصرفی انبار سایت ' . ' ( 200 ) ',
                 'priority' => 0,
                 'parent_id' => 47,
                 'user_can_add' => 0,
@@ -901,8 +901,8 @@ class BaseinfoTableSeeder extends Seeder
             ],
             [
                 'id' => 90,
-                'type' => 'type_request',
-                'value' => 'نوع درخواست',
+                'type' => BaseinfoTypesEnum::REQUEST_TYPE->value,
+                'value' => 'Type Request',
                 'priority' => 0,
                 'parent_id' => 0,
                 'user_can_add' => 0,
@@ -911,32 +911,28 @@ class BaseinfoTableSeeder extends Seeder
             ],
             [
                 'id' => 91,
-                'type' => 'type_request',
-                'value' => 'تامین در محل',
+                'type' => BaseinfoTypesEnum::REQUEST_TYPE->value,
+                'value' => 'Supply In',
                 'priority' => 0,
                 'parent_id' => 90,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#ffrfrfr',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 92,
-                'type' => 'type_request',
-                'value' => 'تامین',
+                'type' => BaseinfoTypesEnum::REQUEST_TYPE->value,
+                'value' => 'Supply',
                 'priority' => 0,
                 'parent_id' => 90,
                 'user_can_add' => 0,
                 'user_can_view' => 1,
-                'extra_value' => json_encode([
-                    'color' => '#ffrfrfr',
-                ]),
+                'extra_value' => '',
             ],
             [
                 'id' => 93,
-                'type' => 'type_request',
-                'value' => 'از قبل تامین شده',
+                'type' => BaseinfoTypesEnum::REQUEST_TYPE->value,
+                'value' => 'Supplied Before',
                 'priority' => 0,
                 'parent_id' => 90,
                 'user_can_add' => 0,

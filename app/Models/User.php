@@ -18,4 +18,8 @@ class User extends Authenticatable
     use UserRelations;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'access_request' => 'array'
+    ];
 }

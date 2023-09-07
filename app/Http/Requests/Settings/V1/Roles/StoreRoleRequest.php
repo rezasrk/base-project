@@ -23,9 +23,9 @@ class StoreRoleRequest extends BaseFormRequest
                 'description' => 'This name should be unique in this panel',
                 'example' => 'Writer',
             ],
-            'permissions' => [
+            'permissions.*' => [
                 'description' => 'Permission',
-                'example' => [1],
+                'example' => 54,
             ],
             'status' => [
                 'description' => 'Status of role',
