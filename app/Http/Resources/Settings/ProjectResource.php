@@ -1,22 +1,18 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Settings;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProjectResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
-     */
-    public function toArray(Request $request): array
+    public function toArray(Request $request)
     {
         return [
             'id' => $this->id,
             'title' => $this->project_title,
+            'settings' => new ProjectSettingsResourceCollection(is_null($this->settings) ? [] : $this->settings),
         ];
     }
 }

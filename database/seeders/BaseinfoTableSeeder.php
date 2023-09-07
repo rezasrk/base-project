@@ -948,7 +948,7 @@ class BaseinfoTableSeeder extends Seeder
             [
                 'id' => 94,
                 'type' => BaseinfoTypesEnum::REQUEST_STATUS->value,
-                'value' => 'Assign to buyer',
+                'value' => 'Assign To Buyer',
                 'priority' => 6,
                 'parent_id' => 83,
                 'user_can_add' => 0,

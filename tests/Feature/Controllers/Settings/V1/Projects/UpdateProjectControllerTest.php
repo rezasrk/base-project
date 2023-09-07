@@ -40,6 +40,29 @@ final class UpdateProjectControllerTest extends BaseFeatureTestCase
     }
 
     /** @test */
+    public function authenticated_user_can_not_update_a_project_when_project_does_not_exists()
+    {
+        $oldProjectTitle = 'old-project';
+        $newProjectTitle = 'new-project';
+        $project = Project::factory()->create([
+            'project_title' => $oldProjectTitle
+        ]);
+
+        $response = $this->actingAsSuperUser()->putJson($this->getRoute(3453497345987), [
+            'title' => $newProjectTitle
+        ]);
+
+        $response->assertStatus(JsonResponse::HTTP_NOT_FOUND);
+        $response->assertExactJson([
+            'status' => 'error',
+            'message' => __('messages.exceptions.not_found')
+        ]);
+        $this->assertDatabaseMissing('projects', [
+            'id' => $project->id,
+            'project_title' => $newProjectTitle,
+        ]);
+    }
+    /** @test */
     public function unauthenticated_user_can_not_update_a_project()
     {
         $response = $this->putJson($this->getRoute(123));
