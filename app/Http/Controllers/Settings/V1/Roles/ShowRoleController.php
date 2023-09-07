@@ -13,7 +13,9 @@ use App\Services\Actions\Settings\V1\Roles\ShowRoleService;
 class ShowRoleController extends Controller
 {
     /**
-     * List roles
+     * Show role
+     * 
+     * @urlParam id Example: 547
      *
      * @response{
      *   "status":"success",

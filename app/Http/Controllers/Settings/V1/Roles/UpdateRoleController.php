@@ -15,6 +15,8 @@ class UpdateRoleController extends Controller
 {
     /**
      * Update roles
+     * 
+     * @urlParam id Example: 57
      *
      * @response{
      *   "status":"success",
