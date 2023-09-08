@@ -15,7 +15,7 @@ use App\Services\Actions\Settings\V1\Users\StoreUserService;
 class StoreUserController extends Controller
 {
     /**
-     * Store user
+     * Users store
      *
      * @response{
      *   "status":"success",

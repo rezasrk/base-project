@@ -13,7 +13,7 @@ use App\Services\Actions\Settings\V1\Projects\ShowProjectService;
 class ShowProjectController extends Controller
 {
     /**
-     * Show project
+     * Project show
      * 
      * @urlParam id Example: 987
      *

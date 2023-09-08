@@ -14,7 +14,7 @@ use App\Services\Actions\Settings\V1\Roles\UpdateRoleService;
 class UpdateRoleController extends Controller
 {
     /**
-     * Update roles
+     * Roles update
      * 
      * @urlParam id Example: 57
      *

@@ -13,7 +13,7 @@ use App\Services\Actions\Settings\V1\Users\ShowUserService;
 class ShowUserController extends Controller
 {
     /**
-     * Show user
+     * User show
      * 
      * @urlParam id Example: 45
      *

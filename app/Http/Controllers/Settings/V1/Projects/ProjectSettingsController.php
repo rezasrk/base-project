@@ -15,7 +15,7 @@ use App\Services\Actions\Settings\V1\Projects\ProjectSettingsService;
 class ProjectSettingsController extends Controller
 {
     /**
-     * Update project settings
+     * Project update settings
      * 
      * @urlParam id Example: 692
      * 

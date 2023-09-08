@@ -13,7 +13,7 @@ use App\Services\Actions\Settings\V1\Projects\IndexProjectService;
 class IndexProjectController extends Controller
 {
     /**
-     * List projects
+     * Project lists
      * 
      * @response{
      *   "status":"success",

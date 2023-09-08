@@ -14,7 +14,7 @@ use App\Services\Actions\Settings\V1\Projects\StoreProjectService;
 class StoreProjectController extends Controller
 {
     /**
-     * Store projects
+     * Projects store
      *
      * @response{
      *   "status":"success",

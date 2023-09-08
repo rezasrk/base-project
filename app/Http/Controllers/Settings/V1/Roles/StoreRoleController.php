@@ -14,7 +14,7 @@ use App\Services\Actions\Settings\V1\Roles\StoreRoleService;
 class StoreRoleController extends Controller
 {
     /**
-     * Store roles
+     * Roles store
      *
      * @response{
      *   "status":"success",

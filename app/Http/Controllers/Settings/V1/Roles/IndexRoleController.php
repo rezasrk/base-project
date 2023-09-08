@@ -13,7 +13,7 @@ use App\Services\Actions\Settings\V1\Roles\IndexRoleService;
 class IndexRoleController extends Controller
 {
     /**
-     * List roles
+     * Roles list
      *
      * @response{
      *   "status":"success",
