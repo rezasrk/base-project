@@ -25,4 +25,42 @@ class StoreUserRequest extends BaseFormRequest
             'roles.*' => ['required', 'exists:roles,id'],
         ];
     }
+
+    public function bodyParameters()
+    {
+        return [
+            'username' => [
+                'description' => 'The username of user',
+                'example' => 'admin'
+            ],
+            'name' => [
+                'description' => 'The username of user',
+                'example' => 'Ali'
+            ],
+            'family' => [
+                'description' => 'The family of user',
+                'example' => 'Mohammad'
+            ],
+            'password' => [
+                'description' => 'The password of user',
+                'example' => 'ADKSekjdh345'
+            ],
+            'projects.*' => [
+                'description' => 'Assign projects to user',
+                'example' => 65
+            ],
+            'request_statuses.*' => [
+                'description' => 'Assign request statuses to user',
+                'example' => 36
+            ],
+            'request_types.*' => [
+                'description' => 'Assign request types to user',
+                'example' => 52
+            ],
+            'roles.*' => [
+                'description' => 'Assign roles to user',
+                'example' => 35
+            ]
+        ];
+    }
 }

@@ -7,8 +7,21 @@ use App\Http\Requests\Settings\V1\Users\StoreUserRequest;
 use App\Services\Actions\Settings\V1\Users\DTO\StoreUserRequestDTO;
 use App\Services\Actions\Settings\V1\Users\StoreUserService;
 
+/**
+ * @group Settings
+ *
+ * @authenticated
+ */
 class StoreUserController extends Controller
 {
+    /**
+     * Store user
+     *
+     * @response{
+     *   "status":"success",
+     *   "message":"User store successfully"
+     * }
+     */
     public function __invoke(StoreUserRequest $storeUserRequest, StoreUserService $storeUserService)
     {
         $storeUserService->handle(
