@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Traits\User\UserRelations;
+use App\Models\Traits\User\UserScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,6 +17,7 @@ class User extends Authenticatable
     use HasRoles;
     use Notifiable;
     use UserRelations;
+    use UserScope;
 
     protected $guarded = [];
 

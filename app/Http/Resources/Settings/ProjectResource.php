@@ -12,7 +12,7 @@ class ProjectResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->project_title,
-            'settings' => new ProjectSettingsResourceCollection(is_null($this->settings) ? [] : $this->settings),
+            'settings' => $this->settings ? new ProjectSettingsResourceCollection($this->settings) : [],
         ];
     }
 }

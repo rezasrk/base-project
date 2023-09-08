@@ -86,22 +86,7 @@ final class ShowProjectControllerTest extends BaseFeatureTestCase
             'data' => [
                 'id' => $project->id,
                 'title' => $project->project_title,
-                'settings' => [
-                    'supply' => [
-                        'pre_request_code' => null,
-                        'status' => [
-                            'first_status' => [
-                                'id' => null,
-                                'value' => null
-                            ],
-                            'last_status' => [
-                                'id' => null,
-                                'value' => null
-                            ],
-                            'between_statuses' => []
-                        ]
-                    ]
-                ]
+                'settings' => []
             ]
         ]);
     }
