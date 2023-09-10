@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 class IndexUserController extends Controller
 {
     /**
-     * Roles list
+     * Users list
      * 
      * @queryParam username  Example: Admin
      * @queryParam full_name  Example: Ali Mohammad
