@@ -2,9 +2,11 @@
 
 namespace App\Services\Actions\Settings\V1\Users\DTO;
 
-class StoreUserRequestDTO extends UpdateOrCreateUserRequestDTO
+
+class UpdateUserRequestDTO extends UpdateOrCreateUserRequestDTO
 {
     public function __construct(
+        private int $userId,
         private string $username,
         private string $name,
         private string $family,
@@ -24,5 +26,10 @@ class StoreUserRequestDTO extends UpdateOrCreateUserRequestDTO
             $roles,
             $password
         );
+    }
+
+    public function getUserId(): int
+    {
+        return $this->userId;
     }
 }

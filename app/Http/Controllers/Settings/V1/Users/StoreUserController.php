@@ -26,14 +26,14 @@ class StoreUserController extends Controller
     {
         $storeUserService->handle(
             new StoreUserRequestDTO(
-                $storeUserRequest->input('username'),
-                $storeUserRequest->input('name'),
-                $storeUserRequest->input('family'),
-                $storeUserRequest->input('password'),
-                $storeUserRequest->input('projects'),
-                $storeUserRequest->input('request_statuses'),
-                $storeUserRequest->input('request_types'),
-                $storeUserRequest->input('roles')
+                username: $storeUserRequest->input('username'),
+                name: $storeUserRequest->input('name'),
+                family: $storeUserRequest->input('family'),
+                projects: $storeUserRequest->input('projects'),
+                requestStatuses: $storeUserRequest->input('request_statuses'),
+                requestTypes: $storeUserRequest->input('request_types'),
+                roles: $storeUserRequest->input('roles'),
+                password: $storeUserRequest->input('password')
             )
         );
 

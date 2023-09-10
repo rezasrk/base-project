@@ -231,7 +231,7 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'username' => ['required', 'unique:users,username'],
             'name' => ['required', 'string', 'max:160'],
             'family' => ['required', 'string', 'max:160'],
-            'password' => ['nullable', new StrongPasswordRule],
+            'password' => ['required', new StrongPasswordRule],
             'projects' => ['present', 'array', 'min:1'],
             'request_statuses' => ['present', 'array', 'min:1'],
             'request_types' => ['present', 'array', 'min:1'],

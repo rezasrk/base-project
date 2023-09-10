@@ -6,15 +6,15 @@ use App\Enum\BaseinfoTypesEnum;
 use App\Http\Requests\BaseFormRequest;
 use App\Rules\StrongPasswordRule;
 
-class StoreUserRequest extends BaseFormRequest
+class UpdateUserRequest extends BaseFormRequest
 {
     public function rules()
     {
         return [
-            'username' => ['required', 'unique:users,username'],
+            'username' => ['required', 'unique:users,username,' . $this->route('id') . ',id'],
             'name' => ['required', 'string', 'max:160'],
             'family' => ['required', 'string', 'max:160'],
-            'password' => ['required', new StrongPasswordRule],
+            'password' => ['nullable', new StrongPasswordRule],
             'projects' => ['present', 'array', 'min:1'],
             'request_statuses' => ['present', 'array', 'min:1'],
             'request_types' => ['present', 'array', 'min:1'],

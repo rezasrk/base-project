@@ -83,6 +83,13 @@ class PermissionTableSeeder extends Seeder
                 'status' => 1,
                 'guard_name' => 'sanctum',
             ],
+            [
+                'id' => 11,
+                'name' => 'settings.users.update',
+                'parent_id' => 1,
+                'status' => 1,
+                'guard_name' => 'sanctum',
+            ],
         ];
 
         foreach ($permissions as $permission) {
