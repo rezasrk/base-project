@@ -80,6 +80,18 @@ class ShowUserControllerTest extends BaseFeatureTestCase
         ]);
     }
 
+    /** @test */
+    public function authenticated_user_can_not_see_super_user_information()
+    {
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute(1));
+
+        $response->assertStatus(JsonResponse::HTTP_NOT_FOUND);
+        $response->assertExactJson([
+            'status' => 'error',
+            'message' => __('messages.exceptions.not_found'),
+        ]);
+    }
+
     public function getRoute(int $projectId)
     {
         return route('settings.v1.users.show', $projectId);
