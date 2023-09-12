@@ -12,8 +12,9 @@ return [
     'login_successfully' => 'Login successfully',
     'old_password' => 'The old password is wrong',
     'select-project' => 'User access to this project',
-    'fetch' => ':title fetch successfully',
-    'store' => ':title store successfully',
-    'update' => ':title update successfully',
-    'delete' => ':title delete successfully',
+    'fetch' => ':title fetched successfully',
+    'store' => ':title stored successfully',
+    'update' => ':title updated successfully',
+    'delete' => ':title deleted successfully',
+    'upload' => ':title uploaded successfully',
 ];

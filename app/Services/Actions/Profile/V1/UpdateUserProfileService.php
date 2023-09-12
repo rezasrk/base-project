@@ -17,10 +17,5 @@ class UpdateUserProfileService
             'name' => $updateUserProfileRequestDTO->getName(),
             'family' => $updateUserProfileRequestDTO->getFamily(),
         ]);
-
-        if (!is_null($updateUserProfileRequestDTO->getSignFile())) {
-            $path = $updateUserProfileRequestDTO->getSignFile()->store('signature');
-            $user->update(['signature_path' => $path]);
-        }
     }
 }

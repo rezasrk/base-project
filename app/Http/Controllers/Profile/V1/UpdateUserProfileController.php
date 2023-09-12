@@ -30,7 +30,6 @@ class UpdateUserProfileController extends Controller
             email: $updateUserProfileRequest->input('email'),
             name: $updateUserProfileRequest->input('name'),
             family: $updateUserProfileRequest->input('family'),
-            uploadedFile: $updateUserProfileRequest->hasFile('user_sign') ? $updateUserProfileRequest->file('user_sign') : null
         ));
 
         return response()->success(__('messages.update', ['title' => __('title.user_profile')]));

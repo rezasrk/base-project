@@ -19,7 +19,6 @@ class UpdateUserProfileRequest extends BaseFormRequest
             'email' => ['required', 'max:190', 'unique:users,email,' . $userId . ',id'],
             'name' => ['required', 'max:100'],
             'family' => ['required', 'max:100'],
-            'user_sign' => ['nullable'],
         ];
     }
 
@@ -41,10 +40,6 @@ class UpdateUserProfileRequest extends BaseFormRequest
             'family' => [
                 'description' => 'Family of user',
                 'example' => 'Mohammad',
-            ],
-            'user_sign' => [
-                'description' => 'Sign of the user',
-                'example' => '/var/www/sing.jpeg',
             ],
         ];
     }

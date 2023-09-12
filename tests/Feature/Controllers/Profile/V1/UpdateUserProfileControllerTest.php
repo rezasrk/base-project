@@ -7,8 +7,6 @@ use App\Http\Requests\Profile\V1\UpdateUserProfileRequest;
 use App\Models\User;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
 use Tests\Feature\AdditionalAssertion;
 use Tests\Feature\BaseFeatureTestCase;
 
@@ -49,45 +47,6 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
             'email' => $newEmail,
             'name' => $newName,
             'family' => $newFamily,
-        ]);
-    }
-
-    /** @test */
-    public function authenticated_user_can_update_profile_information_with_upload_sign_image()
-    {
-        Storage::fake();
-        $newUsername = $this->faker->userName();
-        $newEmail = $this->faker->email();
-        $newName = $this->faker->name();
-        $newFamily = $this->faker->name();
-        $user = User::factory()->create([
-            'username' => $this->faker->userName(),
-            'email' => $this->faker->email(),
-            'name' => $this->faker->name(),
-            'family' => $this->faker->name(),
-            'signature_path' => null,
-        ]);
-
-        $response = $this->actingAsUser($user)->putJson($this->getRoute(), [
-            'username' => $newUsername,
-            'email' => $newEmail,
-            'name' => $newName,
-            'family' => $newFamily,
-            'user_sign' => UploadedFile::fake()->image('sign.jpeg'),
-        ]);
-
-        $response->assertStatus(JsonResponse::HTTP_OK);
-        $response->assertExactJson([
-            'status' => 'success',
-            'message' => __('messages.update', ['title' => __('title.user_profile')]),
-        ]);
-        $this->assertDatabaseHas('users', [
-            'id' => $user->id,
-            'username' => $newUsername,
-            'email' => $newEmail,
-            'name' => $newName,
-            'family' => $newFamily,
-            'signature_path' => $user->fresh()->signature_path,
         ]);
     }
 
@@ -181,7 +140,6 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
             'email' => ['required', 'max:190', 'unique:users,email,' . $user->id . ',id'],
             'name' => ['required', 'max:100'],
             'family' => ['required', 'max:100'],
-            'user_sign' => ['nullable'],
         ], $updateUserProfileRequest->rules());
     }
 

@@ -2,8 +2,6 @@
 
 namespace App\Services\Actions\Profile\V1\DTO;
 
-use Illuminate\Http\UploadedFile;
-
 class UpdateUserProfileRequestDTO
 {
     public function __construct(
@@ -11,8 +9,7 @@ class UpdateUserProfileRequestDTO
         private string $username,
         private string $email,
         private string $name,
-        private string $family,
-        private ?UploadedFile $uploadedFile = null
+        private string $family
     ) {
     }
 
@@ -39,10 +36,5 @@ class UpdateUserProfileRequestDTO
     public function getFamily(): string
     {
         return $this->family;
-    }
-
-    public function getSignFile(): ?UploadedFile
-    {
-        return $this->uploadedFile;
     }
 }

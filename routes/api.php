@@ -7,6 +7,7 @@ use App\Http\Controllers\Profile\V1\ChangeUserPasswordController;
 use App\Http\Controllers\Profile\V1\DeleteSignatureFileController;
 use App\Http\Controllers\Profile\V1\ShowUserProfileController;
 use App\Http\Controllers\Profile\V1\UpdateUserProfileController;
+use App\Http\Controllers\Profile\V1\UploadSignatureController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', LoginController::class)->name('login');
@@ -18,5 +19,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('update-user-profile', UpdateUserProfileController::class)->name('update-user-profile');
     Route::get('show-user-profile', ShowUserProfileController::class)->name('show-user-profile');
     Route::put('change-user-password', ChangeUserPasswordController::class)->name('change-user-password');
+    Route::put('upload-signature', UploadSignatureController::class)->name('upload-signature');
     Route::delete('delete-signature', DeleteSignatureFileController::class)->name('delete-signature');
 });
