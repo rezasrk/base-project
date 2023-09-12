@@ -9,4 +9,5 @@ return [
     'project' => 'Project',
     'project_settings' => 'Project settings',
     'user' => 'User',
+    'sign' => 'Sign',
 ];

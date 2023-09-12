@@ -15,4 +15,5 @@ return [
     'fetch' => ':title fetch successfully',
     'store' => ':title store successfully',
     'update' => ':title update successfully',
+    'delete' => ':title delete successfully',
 ];
