@@ -15,7 +15,7 @@ class BaseinfoController extends Controller
     /**
      * Baseinfo list
      * Valid type "request_status,request_type"
-     * 
+     *
      * @queryParam type Example: request_type,request_stats
      *
      * @response{
@@ -27,7 +27,7 @@ class BaseinfoController extends Controller
      *              "id":23,
      *              "value":"Sent"
      *          }
-     *      ]    
+     *      ]
      *   ]
      * }
      */

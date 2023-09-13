@@ -16,10 +16,10 @@ final class BaseinfoControllerTest extends BaseFeatureTestCase
         $baseinfo = Baseinfo::factory()->create([
             'type' => $firstBaseType,
             'value' => $firstBaseValue,
-            'parent_id' => 1233
+            'parent_id' => 1233,
         ]);
 
-        $response = $this->actingAsSuperUser()->getJson($this->getRoute() . '?types=' . $firstBaseType);
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute().'?types='.$firstBaseType);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
@@ -29,10 +29,10 @@ final class BaseinfoControllerTest extends BaseFeatureTestCase
                 $firstBaseType => [
                     [
                         'id' => $baseinfo->id,
-                        'value' => $baseinfo->value
-                    ]
-                ]
-            ]
+                        'value' => $baseinfo->value,
+                    ],
+                ],
+            ],
         ]);
     }
 
@@ -44,18 +44,17 @@ final class BaseinfoControllerTest extends BaseFeatureTestCase
         $firstBaseinfo = Baseinfo::factory()->create([
             'type' => $firstBaseType,
             'value' => $firstBaseValue,
-            'parent_id' => 1233
+            'parent_id' => 1233,
         ]);
         $secondBaseType = 'secondBaseType';
         $secondBaseValue = 'secondBaseValue';
         $secondBaseinfo = Baseinfo::factory()->create([
             'type' => $secondBaseType,
             'value' => $secondBaseValue,
-            'parent_id' => 1233
+            'parent_id' => 1233,
         ]);
 
-
-        $response = $this->actingAsSuperUser()->getJson($this->getRoute() . '?types=' . $firstBaseType . ',' . $secondBaseType);
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute().'?types='.$firstBaseType.','.$secondBaseType);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
@@ -65,16 +64,16 @@ final class BaseinfoControllerTest extends BaseFeatureTestCase
                 $firstBaseType => [
                     [
                         'id' => $firstBaseinfo->id,
-                        'value' => $firstBaseinfo->value
-                    ]
+                        'value' => $firstBaseinfo->value,
+                    ],
                 ],
                 $secondBaseType => [
                     [
                         'id' => $secondBaseinfo->id,
-                        'value' => $secondBaseinfo->value
-                    ]
-                ]
-            ]
+                        'value' => $secondBaseinfo->value,
+                    ],
+                ],
+            ],
         ]);
     }
 

@@ -17,9 +17,9 @@ class BaseinfoService
                     ->map(function ($item) {
                         return [
                             'id' => $item->id,
-                            'value' => __($item->value)
+                            'value' => __($item->value),
                         ];
-                    })->all()
+                    })->all(),
             ];
         })->all();
     }
