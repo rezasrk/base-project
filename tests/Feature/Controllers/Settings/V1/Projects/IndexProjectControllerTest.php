@@ -20,7 +20,7 @@ final class IndexProjectControllerTest extends BaseFeatureTestCase
         $assignToBuyer = RequestStatusEnum::ASSIGN_TO_BUYER->value;
         $betweenStatuses = [
             $acceptFinancial,
-            $assignToBuyer
+            $assignToBuyer,
         ];
         $project = Project::factory()->create([
             'settings' => [
@@ -29,7 +29,7 @@ final class IndexProjectControllerTest extends BaseFeatureTestCase
                     'status' => [
                         'first_status' => $firstStatus,
                         'last_status' => $lastStatus,
-                        'between_statuses' => $betweenStatuses
+                        'between_statuses' => $betweenStatuses,
                     ],
                 ],
             ],
@@ -51,27 +51,27 @@ final class IndexProjectControllerTest extends BaseFeatureTestCase
                             'status' => [
                                 'first_status' => [
                                     'id' => $firstStatus,
-                                    'value' => 'Sent'
+                                    'value' => 'Sent',
                                 ],
                                 'last_status' => [
                                     'id' => $lastStatus,
-                                    'value' => 'Supply'
+                                    'value' => 'Supply',
                                 ],
                                 'between_statuses' => [
                                     [
                                         'id' => $assignToBuyer,
-                                        'value' => "Assign To Buyer"
+                                        'value' => 'Assign To Buyer',
                                     ],
                                     [
                                         'id' => $acceptFinancial,
-                                        'value' => "Accept Financial"
+                                        'value' => 'Accept Financial',
                                     ],
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
-            ]
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ]);
     }
 

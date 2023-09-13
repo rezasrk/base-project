@@ -15,7 +15,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
     public function authenticated_user_can_see_users_successfully()
     {
         $project = Project::factory()->create([
-            'settings' => []
+            'settings' => [],
         ]);
         $permission = Permission::factory()->create();
         $role = Role::factory()->hasAttached($permission)->create();
@@ -37,8 +37,8 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                         [
                             'id' => $project->id,
                             'title' => $project->project_title,
-                            'settings' => []
-                        ]
+                            'settings' => [],
+                        ],
                     ],
                     'roles' => [
                         [
@@ -47,12 +47,12 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                             'permissions' => [
                                 [
                                     'id' => $permission->id,
-                                    'name' => 'permissions.' . $permission->name,
-                                    'parent_id' => $permission->parent_id
-                                ]
-                            ]
-                        ]
-                    ]
+                                    'name' => 'permissions.'.$permission->name,
+                                    'parent_id' => $permission->parent_id,
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'pagination_information' => [
@@ -69,18 +69,18 @@ class IndexUserControllerTest extends BaseFeatureTestCase
     {
         $username = 'writer';
         $project = Project::factory()->create([
-            'settings' => []
+            'settings' => [],
         ]);
         $permission = Permission::factory()->create();
         $role = Role::factory()->hasAttached($permission)->create();
         User::factory()->hasAttached($project)->hasAttached($role)->create([
-            'username' => 'admin'
+            'username' => 'admin',
         ]);
         $user = User::factory()->hasAttached($project)->hasAttached($role)->create([
-            'username' => $username
+            'username' => $username,
         ]);
 
-        $response = $this->actingAsSuperUser()->getJson($this->getRoute() . "?username=" . $username);
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute().'?username='.$username);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
@@ -96,8 +96,8 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                         [
                             'id' => $project->id,
                             'title' => $project->project_title,
-                            'settings' => []
-                        ]
+                            'settings' => [],
+                        ],
                     ],
                     'roles' => [
                         [
@@ -106,12 +106,12 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                             'permissions' => [
                                 [
                                     'id' => $permission->id,
-                                    'name' => 'permissions.' . $permission->name,
-                                    'parent_id' => $permission->parent_id
-                                ]
-                            ]
-                        ]
-                    ]
+                                    'name' => 'permissions.'.$permission->name,
+                                    'parent_id' => $permission->parent_id,
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'pagination_information' => [
@@ -129,20 +129,20 @@ class IndexUserControllerTest extends BaseFeatureTestCase
         $name = 'Ali';
         $family = 'Mohammad';
         $project = Project::factory()->create([
-            'settings' => []
+            'settings' => [],
         ]);
         $permission = Permission::factory()->create();
         $role = Role::factory()->hasAttached($permission)->create();
         User::factory()->hasAttached($project)->hasAttached($role)->create([
             'name' => 'admin',
-            'family' => 'admin'
+            'family' => 'admin',
         ]);
         $user = User::factory()->hasAttached($project)->hasAttached($role)->create([
             'name' => $name,
-            'family' => $family
+            'family' => $family,
         ]);
 
-        $response = $this->actingAsSuperUser()->getJson($this->getRoute() . "?full_name=" . $name . ' ' . $family);
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute().'?full_name='.$name.' '.$family);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
@@ -158,8 +158,8 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                         [
                             'id' => $project->id,
                             'title' => $project->project_title,
-                            'settings' => []
-                        ]
+                            'settings' => [],
+                        ],
                     ],
                     'roles' => [
                         [
@@ -168,12 +168,12 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                             'permissions' => [
                                 [
                                     'id' => $permission->id,
-                                    'name' => 'permissions.' . $permission->name,
-                                    'parent_id' => $permission->parent_id
-                                ]
-                            ]
-                        ]
-                    ]
+                                    'name' => 'permissions.'.$permission->name,
+                                    'parent_id' => $permission->parent_id,
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'pagination_information' => [
@@ -189,14 +189,14 @@ class IndexUserControllerTest extends BaseFeatureTestCase
     public function authenticated_user_can_see_users_successfully_with_filter_roles()
     {
         $project = Project::factory()->create([
-            'settings' => []
+            'settings' => [],
         ]);
         $permission = Permission::factory()->create();
         $role = Role::factory()->hasAttached($permission)->create();
         User::factory()->create();
         $user = User::factory()->hasAttached($project)->hasAttached($role)->create();
 
-        $response = $this->actingAsSuperUser()->getJson($this->getRoute() . '?roles=' . $role->id . ',');
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute().'?roles='.$role->id.',');
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
@@ -212,8 +212,8 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                         [
                             'id' => $project->id,
                             'title' => $project->project_title,
-                            'settings' => []
-                        ]
+                            'settings' => [],
+                        ],
                     ],
                     'roles' => [
                         [
@@ -222,12 +222,12 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                             'permissions' => [
                                 [
                                     'id' => $permission->id,
-                                    'name' => 'permissions.' . $permission->name,
-                                    'parent_id' => $permission->parent_id
-                                ]
-                            ]
-                        ]
-                    ]
+                                    'name' => 'permissions.'.$permission->name,
+                                    'parent_id' => $permission->parent_id,
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'pagination_information' => [

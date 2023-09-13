@@ -35,7 +35,7 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
                     'status' => [
                         'first_status' => $firstStatus,
                         'last_status' => $lastStatus,
-                        'between_statuses' => $betweenStatuses
+                        'between_statuses' => $betweenStatuses,
                     ],
                 ],
             ],
@@ -44,7 +44,7 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.update', ['title' => __('title.project_settings')])
+            'message' => __('messages.update', ['title' => __('title.project_settings')]),
         ]);
         $this->assertDatabaseHas('projects', [
             'id' => $project->id,
@@ -89,10 +89,10 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
             'settings.supply' => ['present', 'array'],
             'settings.supply.pre_request_code' => ['required', 'string', 'min:3', 'max:3'],
             'settings.supply.status' => ['present', 'array'],
-            'settings.supply.status.first_status' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'settings.supply.status.first_status' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
             'settings.supply.status.between_statuses' => ['present', 'array', 'min:2'],
-            'settings.supply.status.between_statuses.*' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
-            'settings.supply.status.last_status' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'settings.supply.status.between_statuses.*' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'settings.supply.status.last_status' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
         ], (new ProjectSettingsRequest())->rules());
     }
 
@@ -121,7 +121,7 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
                     'status' => [
                         'first_status' => $firstStatus,
                         'last_status' => $lastStatus,
-                        'between_statuses' => $betweenStatuses
+                        'between_statuses' => $betweenStatuses,
                     ],
                 ],
             ],
@@ -130,7 +130,7 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_NOT_FOUND);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.not_found')
+            'message' => __('messages.exceptions.not_found'),
         ]);
     }
 
@@ -153,7 +153,7 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
                     'status' => [
                         'first_status' => $firstStatus,
                         'last_status' => $lastStatus,
-                        'between_statuses' => $betweenStatuses
+                        'between_statuses' => $betweenStatuses,
                     ],
                 ],
             ],
@@ -165,9 +165,9 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'settings.supply.status.first_status' => [
-                    __('validation.exists', ['attribute' => 'settings.supply.status.first status'])
-                ]
-            ]
+                    __('validation.exists', ['attribute' => 'settings.supply.status.first status']),
+                ],
+            ],
         ]);
     }
 
@@ -190,7 +190,7 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
                     'status' => [
                         'first_status' => $firstStatus,
                         'last_status' => $lastStatus,
-                        'between_statuses' => $betweenStatuses
+                        'between_statuses' => $betweenStatuses,
                     ],
                 ],
             ],
@@ -202,9 +202,9 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'settings.supply.status.last_status' => [
-                    __('validation.exists', ['attribute' => 'settings.supply.status.last status'])
-                ]
-            ]
+                    __('validation.exists', ['attribute' => 'settings.supply.status.last status']),
+                ],
+            ],
         ]);
     }
 
@@ -227,7 +227,7 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
                     'status' => [
                         'first_status' => $firstStatus,
                         'last_status' => $lastStatus,
-                        'between_statuses' => $betweenStatuses
+                        'between_statuses' => $betweenStatuses,
                     ],
                 ],
             ],
@@ -239,9 +239,9 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'settings.supply.status.between_statuses.0' => [
-                    __('validation.exists', ['attribute' => 'settings.supply.status.between_statuses.0'])
-                ]
-            ]
+                    __('validation.exists', ['attribute' => 'settings.supply.status.between_statuses.0']),
+                ],
+            ],
         ]);
     }
 

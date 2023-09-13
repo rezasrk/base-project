@@ -45,7 +45,7 @@ final class ChangeUserPasswordControllerTest extends BaseFeatureTestCase
         $oldPasswordHash = '$2y$10$TP4OETFuOgh52nM9Wq69AeOR.Xqsg.FrHKocAVb.GP2eDoRT3T6uK';
         $newPassword = 'AJdkca574532sk';
         $user = User::factory()->create([
-            'password' => $oldPasswordHash . '-extra',
+            'password' => $oldPasswordHash.'-extra',
         ]);
 
         $response = $this->actingAsUser($user)->putJson($this->getRoute(), [

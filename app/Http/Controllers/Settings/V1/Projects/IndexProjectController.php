@@ -14,7 +14,7 @@ class IndexProjectController extends Controller
 {
     /**
      * Project lists
-     * 
+     *
      * @response{
      *   "status":"success",
      *   "message":"Project fetch successfully",

@@ -19,7 +19,7 @@ final class ShowProjectControllerTest extends BaseFeatureTestCase
         $assignToBuyer = RequestStatusEnum::ASSIGN_TO_BUYER->value;
         $betweenStatuses = [
             $acceptFinancial,
-            $assignToBuyer
+            $assignToBuyer,
         ];
         $project = Project::factory()->create([
             'settings' => [
@@ -28,7 +28,7 @@ final class ShowProjectControllerTest extends BaseFeatureTestCase
                     'status' => [
                         'first_status' => $firstStatus,
                         'last_status' => $lastStatus,
-                        'between_statuses' => $betweenStatuses
+                        'between_statuses' => $betweenStatuses,
                     ],
                 ],
             ],
@@ -49,26 +49,26 @@ final class ShowProjectControllerTest extends BaseFeatureTestCase
                         'status' => [
                             'first_status' => [
                                 'id' => $firstStatus,
-                                'value' => 'Sent'
+                                'value' => 'Sent',
                             ],
                             'last_status' => [
                                 'id' => $lastStatus,
-                                'value' => 'Supply'
+                                'value' => 'Supply',
                             ],
                             'between_statuses' => [
                                 [
                                     'id' => $assignToBuyer,
-                                    'value' => "Assign To Buyer"
+                                    'value' => 'Assign To Buyer',
                                 ],
                                 [
                                     'id' => $acceptFinancial,
-                                    'value' => "Accept Financial"
+                                    'value' => 'Accept Financial',
                                 ],
-                            ]
-                        ]
-                    ]
-                ]
-            ]
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ]);
     }
 
@@ -86,8 +86,8 @@ final class ShowProjectControllerTest extends BaseFeatureTestCase
             'data' => [
                 'id' => $project->id,
                 'title' => $project->project_title,
-                'settings' => []
-            ]
+                'settings' => [],
+            ],
         ]);
     }
 
@@ -111,7 +111,7 @@ final class ShowProjectControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_NOT_FOUND);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.not_found')
+            'message' => __('messages.exceptions.not_found'),
         ]);
     }
 

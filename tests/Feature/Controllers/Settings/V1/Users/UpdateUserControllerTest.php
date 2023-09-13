@@ -48,20 +48,20 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
             'projects' => [$project->id],
             'request_statuses' => [RequestStatusEnum::ACCEPT->value],
             'request_types' => [RequestTypesEnum::SUPPLIED_BEFORE],
-            'roles' => [$role->id]
+            'roles' => [$role->id],
         ]);
 
         $user = User::query()->where('username', $username)->first();
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.update', ['title' => __('title.user')])
+            'message' => __('messages.update', ['title' => __('title.user')]),
         ]);
         $this->assertDatabaseHas('users', [
             'username' => $username,
             'name' => $name,
             'family' => $family,
-            'password' => $hashPassword
+            'password' => $hashPassword,
         ]);
         $this->assertDatabaseHas('model_has_roles', [
             'role_id' => $role->id,
@@ -69,7 +69,7 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
             'model_id' => $user->id,
         ]);
         $this->assertEquals([
-            RequestStatusEnum::ACCEPT->value
+            RequestStatusEnum::ACCEPT->value,
         ], $user->access_request['statuses']);
         $this->assertEquals([
             RequestTypesEnum::SUPPLIED_BEFORE->value,
@@ -103,20 +103,20 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
             'projects' => [$project->id],
             'request_statuses' => [RequestStatusEnum::ACCEPT->value],
             'request_types' => [RequestTypesEnum::SUPPLIED_BEFORE],
-            'roles' => [$role->id]
+            'roles' => [$role->id],
         ]);
 
         $user = User::query()->where('username', $username)->first();
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.update', ['title' => __('title.user')])
+            'message' => __('messages.update', ['title' => __('title.user')]),
         ]);
         $this->assertDatabaseHas('users', [
             'username' => $username,
             'name' => $name,
             'family' => $family,
-            'password' => $hashPassword
+            'password' => $hashPassword,
         ]);
         $this->assertDatabaseHas('model_has_roles', [
             'role_id' => $role->id,
@@ -124,7 +124,7 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
             'model_id' => $user->id,
         ]);
         $this->assertEquals([
-            RequestStatusEnum::ACCEPT->value
+            RequestStatusEnum::ACCEPT->value,
         ], $user->access_request['statuses']);
         $this->assertEquals([
             RequestTypesEnum::SUPPLIED_BEFORE->value,
@@ -167,7 +167,7 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.update', ['title' => __('title.user')])
+            'message' => __('messages.update', ['title' => __('title.user')]),
         ]);
         $this->assertDatabaseHas('users', [
             'username' => $username,
@@ -180,7 +180,7 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
             'model_id' => $user->id,
         ]);
         $this->assertEquals([
-            RequestStatusEnum::ACCEPT->value
+            RequestStatusEnum::ACCEPT->value,
         ], $user->access_request['statuses']);
         $this->assertEquals([
             RequestTypesEnum::SUPPLIED_BEFORE->value,
@@ -252,9 +252,9 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'username' => [
-                    __('validation.unique', ['attribute' => 'username'])
-                ]
-            ]
+                    __('validation.unique', ['attribute' => 'username']),
+                ],
+            ],
         ]);
     }
 
@@ -265,13 +265,13 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
         $updateUserRequest = new UpdateUserRequest();
         $updateUserRequest->setRouteResolver(function () use ($userId) {
             $route = new Route('put', $this->getRoute($userId), [UpdateUserController::class]);
-            $route->parameters['id'] =  $userId;
+            $route->parameters['id'] = $userId;
 
             return $route;
         });
 
         $this->assertEquals([
-            'username' => ['required', 'unique:users,username,' . $userId . ',id'],
+            'username' => ['required', 'unique:users,username,'.$userId.',id'],
             'name' => ['required', 'string', 'max:160'],
             'family' => ['required', 'string', 'max:160'],
             'password' => ['nullable', new StrongPasswordRule],
@@ -280,8 +280,8 @@ final class UpdateUserControllerTest extends BaseFeatureTestCase
             'request_types' => ['present', 'array', 'min:1'],
             'roles' => ['present', 'array', 'min:1'],
             'projects.*' => ['required', 'int', 'exists:projects,id'],
-            'request_statuses.*' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
-            'request_types.*' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_TYPE->value],
+            'request_statuses.*' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'request_types.*' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_TYPE->value],
             'roles.*' => ['required', 'exists:roles,id'],
         ], $updateUserRequest->rules());
     }

@@ -20,8 +20,8 @@ class StoreUserRequest extends BaseFormRequest
             'request_types' => ['present', 'array', 'min:1'],
             'roles' => ['present', 'array', 'min:1'],
             'projects.*' => ['required', 'int', 'exists:projects,id'],
-            'request_statuses.*' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
-            'request_types.*' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_TYPE->value],
+            'request_statuses.*' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'request_types.*' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_TYPE->value],
             'roles.*' => ['required', 'exists:roles,id'],
         ];
     }
@@ -31,36 +31,36 @@ class StoreUserRequest extends BaseFormRequest
         return [
             'username' => [
                 'description' => 'The username of user',
-                'example' => 'admin'
+                'example' => 'admin',
             ],
             'name' => [
                 'description' => 'The username of user',
-                'example' => 'Ali'
+                'example' => 'Ali',
             ],
             'family' => [
                 'description' => 'The family of user',
-                'example' => 'Mohammad'
+                'example' => 'Mohammad',
             ],
             'password' => [
                 'description' => 'The password of user',
-                'example' => 'ADKSekjdh345'
+                'example' => 'ADKSekjdh345',
             ],
             'projects.*' => [
                 'description' => 'Assign projects to user',
-                'example' => 65
+                'example' => 65,
             ],
             'request_statuses.*' => [
                 'description' => 'Assign request statuses to user',
-                'example' => 36
+                'example' => 36,
             ],
             'request_types.*' => [
                 'description' => 'Assign request types to user',
-                'example' => 52
+                'example' => 52,
             ],
             'roles.*' => [
                 'description' => 'Assign roles to user',
-                'example' => 35
-            ]
+                'example' => 35,
+            ],
         ];
     }
 }

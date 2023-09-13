@@ -16,7 +16,7 @@ class IndexUserController extends Controller
 {
     /**
      * Users list
-     * 
+     *
      * @queryParam username  Example: Admin
      * @queryParam full_name  Example: Ali Mohammad
      * @queryParam roles  Example: 12,3,34

@@ -9,7 +9,7 @@ class UpdateProjectRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'unique:projects,project_title,' . $this->route('id') . ',id', 'max:190'],
+            'title' => ['required', 'unique:projects,project_title,'.$this->route('id').',id', 'max:190'],
         ];
     }
 

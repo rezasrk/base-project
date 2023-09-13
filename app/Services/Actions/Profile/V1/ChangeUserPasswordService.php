@@ -18,7 +18,7 @@ class ChangeUserPasswordService
             $user->password
         );
 
-        if (!$checkPassword) {
+        if (! $checkPassword) {
             throw ValidationException::withMessages(['old_password' => __('messages.old_password_wrong')]);
         }
 

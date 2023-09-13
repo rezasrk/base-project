@@ -59,7 +59,7 @@ final class UploadSignatureControllerTest extends BaseFeatureTestCase
     /** @test */
     public function upload_signature_has_correct_form_request()
     {
-        $this->assertActionUsesFormRequest(UploadSignatureController::class,'__invoke',UploadSignatureRequest::class);
+        $this->assertActionUsesFormRequest(UploadSignatureController::class, '__invoke', UploadSignatureRequest::class);
     }
 
     private function getRoute()

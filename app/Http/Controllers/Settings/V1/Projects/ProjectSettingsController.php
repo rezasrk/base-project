@@ -16,9 +16,9 @@ class ProjectSettingsController extends Controller
 {
     /**
      * Project update settings
-     * 
+     *
      * @urlParam id Example: 692
-     * 
+     *
      * @response{
      *   "status":"success",
      *   "message":"Project request update successfully"

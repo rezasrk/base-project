@@ -34,7 +34,7 @@ class UploadSignatureController extends Controller
         return response()->success(
             __('messages.upload', ['title' => __('title.signature')]),
             [
-                'signature_path' => $path
+                'signature_path' => $path,
             ]
         );
     }

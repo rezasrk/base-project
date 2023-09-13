@@ -14,7 +14,7 @@ class ShowRoleController extends Controller
 {
     /**
      * Role show
-     * 
+     *
      * @urlParam id Example: 547
      *
      * @response{

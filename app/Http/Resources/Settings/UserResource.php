@@ -15,7 +15,7 @@ class UserResource extends JsonResource
             'family' => $this->family,
             'username' => $this->username,
             'projects' => new ProjectResourceCollection($this->projects),
-            'roles' => new RoleResourceCollection($this->roles)
+            'roles' => new RoleResourceCollection($this->roles),
         ];
     }
 }

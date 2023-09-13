@@ -136,8 +136,8 @@ final class UpdateUserProfileControllerTest extends BaseFeatureTestCase
         });
 
         $this->assertEquals([
-            'username' => ['required', 'max:100', 'unique:users,username,' . $user->id . ',id'],
-            'email' => ['required', 'max:190', 'unique:users,email,' . $user->id . ',id'],
+            'username' => ['required', 'max:100', 'unique:users,username,'.$user->id.',id'],
+            'email' => ['required', 'max:190', 'unique:users,email,'.$user->id.',id'],
             'name' => ['required', 'max:100'],
             'family' => ['required', 'max:100'],
         ], $updateUserProfileRequest->rules());

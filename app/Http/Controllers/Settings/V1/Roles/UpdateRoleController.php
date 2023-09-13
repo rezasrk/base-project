@@ -15,7 +15,7 @@ class UpdateRoleController extends Controller
 {
     /**
      * Roles update
-     * 
+     *
      * @urlParam id Example: 57
      *
      * @response{

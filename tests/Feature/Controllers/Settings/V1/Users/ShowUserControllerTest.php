@@ -15,7 +15,7 @@ class ShowUserControllerTest extends BaseFeatureTestCase
     public function authenticated_user_can_see_a_user_information_successfully()
     {
         $project = Project::factory()->create([
-            'settings' => []
+            'settings' => [],
         ]);
         $permission = Permission::factory()->create();
         $role = Role::factory()->hasAttached($permission)->create();
@@ -36,8 +36,8 @@ class ShowUserControllerTest extends BaseFeatureTestCase
                     [
                         'id' => $project->id,
                         'title' => $project->project_title,
-                        'settings' => []
-                    ]
+                        'settings' => [],
+                    ],
                 ],
                 'roles' => [
                     [
@@ -47,12 +47,12 @@ class ShowUserControllerTest extends BaseFeatureTestCase
                             [
                                 'id' => $permission->id,
                                 'name' => 'permissions.' . $permission->name,
-                                'parent_id' => $permission->parent_id
-                            ]
-                        ]
-                    ]
-                ]
-            ]
+                                'parent_id' => $permission->parent_id,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ]);
     }
 

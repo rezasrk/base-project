@@ -2,7 +2,6 @@
 
 namespace App\Services\Actions\Settings\V1\Users\DTO;
 
-
 class UpdateUserRequestDTO extends UpdateOrCreateUserRequestDTO
 {
     public function __construct(

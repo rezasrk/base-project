@@ -40,14 +40,14 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'projects' => [$project->id],
             'request_statuses' => [RequestStatusEnum::ACCEPT->value],
             'request_types' => [RequestTypesEnum::SUPPLIED_BEFORE],
-            'roles' => [$role->id]
+            'roles' => [$role->id],
         ]);
 
         $user = User::query()->where('username', $username)->first();
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.store', ['title' => __('title.user')])
+            'message' => __('messages.store', ['title' => __('title.user')]),
         ]);
         $this->assertDatabaseHas('users', [
             'username' => $username,
@@ -61,7 +61,7 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'model_id' => $user->id,
         ]);
         $this->assertEquals([
-            RequestStatusEnum::ACCEPT->value
+            RequestStatusEnum::ACCEPT->value,
         ], $user->access_request['statuses']);
         $this->assertEquals([
             RequestTypesEnum::SUPPLIED_BEFORE->value,
@@ -111,7 +111,7 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'projects' => [],
             'request_statuses' => [RequestStatusEnum::ACCEPT->value],
             'request_types' => [RequestTypesEnum::SUPPLIED_BEFORE],
-            'roles' => [$role->id]
+            'roles' => [$role->id],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -120,9 +120,9 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'projects' => [
-                    __('validation.min.array', ['attribute' => 'projects', 'min' => 1])
-                ]
-            ]
+                    __('validation.min.array', ['attribute' => 'projects', 'min' => 1]),
+                ],
+            ],
         ]);
     }
 
@@ -143,7 +143,7 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'projects' => [$project->id],
             'request_statuses' => [RequestStatusEnum::ACCEPT->value],
             'request_types' => [RequestTypesEnum::SUPPLIED_BEFORE],
-            'roles' => []
+            'roles' => [],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -152,9 +152,9 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'roles' => [
-                    __('validation.min.array', ['attribute' => 'roles', 'min' => 1])
-                ]
-            ]
+                    __('validation.min.array', ['attribute' => 'roles', 'min' => 1]),
+                ],
+            ],
         ]);
     }
 
@@ -176,7 +176,7 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'projects' => [$project->id],
             'request_statuses' => [],
             'request_types' => [RequestTypesEnum::SUPPLIED_BEFORE],
-            'roles' => [$role->id]
+            'roles' => [$role->id],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -185,9 +185,9 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'request_statuses' => [
-                    __('validation.min.array', ['attribute' => 'request statuses', 'min' => 1])
-                ]
-            ]
+                    __('validation.min.array', ['attribute' => 'request statuses', 'min' => 1]),
+                ],
+            ],
         ]);
     }
 
@@ -209,7 +209,7 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'projects' => [$project->id],
             'request_statuses' => [RequestStatusEnum::ACCEPT->value],
             'request_types' => [],
-            'roles' => [$role->id]
+            'roles' => [$role->id],
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -218,9 +218,9 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'request_types' => [
-                    __('validation.min.array', ['attribute' => 'request types', 'min' => 1])
-                ]
-            ]
+                    __('validation.min.array', ['attribute' => 'request types', 'min' => 1]),
+                ],
+            ],
         ]);
     }
 
@@ -237,8 +237,8 @@ final class StoreUserControllerTest extends BaseFeatureTestCase
             'request_types' => ['present', 'array', 'min:1'],
             'roles' => ['present', 'array', 'min:1'],
             'projects.*' => ['required', 'int', 'exists:projects,id'],
-            'request_statuses.*' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
-            'request_types.*' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_TYPE->value],
+            'request_statuses.*' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'request_types.*' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_TYPE->value],
             'roles.*' => ['required', 'exists:roles,id'],
         ], (new StoreUserRequest())->rules());
     }

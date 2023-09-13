@@ -22,6 +22,6 @@ class User extends Authenticatable
     protected $guarded = [];
 
     protected $casts = [
-        'access_request' => 'array'
+        'access_request' => 'array',
     ];
 }

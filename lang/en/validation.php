@@ -183,7 +183,7 @@ return [
 
     'attributes' => [
         'request_statuses' => 'request statuses',
-        'request_types' => 'request types'
+        'request_types' => 'request types',
     ],
 
 ];

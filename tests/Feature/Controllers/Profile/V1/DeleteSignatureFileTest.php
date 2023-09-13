@@ -14,7 +14,7 @@ final class DeleteSignatureFileTest extends BaseFeatureTestCase
         $signPath = 'storage/sign/path/to/sign.png';
 
         $user = User::factory()->create([
-            'signature_path' => $signPath
+            'signature_path' => $signPath,
         ]);
 
         $response = $this->actingAsUser($user)->deleteJson($this->getRoute());
@@ -22,11 +22,11 @@ final class DeleteSignatureFileTest extends BaseFeatureTestCase
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.delete', ['title' => __('title.sign')])
+            'message' => __('messages.delete', ['title' => __('title.sign')]),
         ]);
         $this->assertDatabaseHas('users', [
             'id' => $user->id,
-            'signature_path' => null
+            'signature_path' => null,
         ]);
     }
 

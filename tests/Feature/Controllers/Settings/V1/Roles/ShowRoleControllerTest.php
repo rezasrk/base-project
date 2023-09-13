@@ -31,7 +31,7 @@ final class ShowRoleControllerTest extends BaseFeatureTestCase
                 'permissions' => [
                     [
                         'id' => $permission->id,
-                        'name' => 'permissions.' . $permission->name,
+                        'name' => 'permissions.'.$permission->name,
                         'parent_id' => $permission->parent_id,
                     ],
                 ],

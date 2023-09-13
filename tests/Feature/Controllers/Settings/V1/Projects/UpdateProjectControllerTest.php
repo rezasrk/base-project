@@ -21,17 +21,17 @@ final class UpdateProjectControllerTest extends BaseFeatureTestCase
         $oldProjectTitle = 'old-project';
         $newProjectTitle = 'new-project';
         $project = Project::factory()->create([
-            'project_title' => $oldProjectTitle
+            'project_title' => $oldProjectTitle,
         ]);
 
         $response = $this->actingAsSuperUser()->putJson($this->getRoute($project->id), [
-            'title' => $newProjectTitle
+            'title' => $newProjectTitle,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.update', ['title' => __('title.project')])
+            'message' => __('messages.update', ['title' => __('title.project')]),
         ]);
         $this->assertDatabaseHas('projects', [
             'id' => $project->id,
@@ -45,23 +45,24 @@ final class UpdateProjectControllerTest extends BaseFeatureTestCase
         $oldProjectTitle = 'old-project';
         $newProjectTitle = 'new-project';
         $project = Project::factory()->create([
-            'project_title' => $oldProjectTitle
+            'project_title' => $oldProjectTitle,
         ]);
 
         $response = $this->actingAsSuperUser()->putJson($this->getRoute(3453497345987), [
-            'title' => $newProjectTitle
+            'title' => $newProjectTitle,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_NOT_FOUND);
         $response->assertExactJson([
             'status' => 'error',
-            'message' => __('messages.exceptions.not_found')
+            'message' => __('messages.exceptions.not_found'),
         ]);
         $this->assertDatabaseMissing('projects', [
             'id' => $project->id,
             'project_title' => $newProjectTitle,
         ]);
     }
+
     /** @test */
     public function unauthenticated_user_can_not_update_a_project()
     {
@@ -80,12 +81,12 @@ final class UpdateProjectControllerTest extends BaseFeatureTestCase
         $oldProjectTitle = 'old-project';
         $newProjectTitle = 'new-project';
         $project = Project::factory()->create([
-            'project_title' => $oldProjectTitle
+            'project_title' => $oldProjectTitle,
         ]);
         $user = User::factory()->create();
 
         $response = $this->actingAsUser($user)->putJson($this->getRoute($project->id), [
-            'title' => $newProjectTitle
+            'title' => $newProjectTitle,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_FORBIDDEN);
@@ -102,13 +103,13 @@ final class UpdateProjectControllerTest extends BaseFeatureTestCase
         $request = new UpdateProjectRequest();
         $request->setRouteResolver(function () use ($projectId) {
             $route = new Route('put', $this->getRoute($projectId), [UpdateProjectController::class]);
-            $route->parameters['id'] =  $projectId;
+            $route->parameters['id'] = $projectId;
 
             return $route;
         });
 
         $this->assertEquals([
-            'title' => ['required', 'unique:projects,project_title,' . $projectId . ',id', 'max:190'],
+            'title' => ['required', 'unique:projects,project_title,'.$projectId.',id', 'max:190'],
         ], $request->rules());
     }
 
@@ -124,14 +125,14 @@ final class UpdateProjectControllerTest extends BaseFeatureTestCase
         $oldProjectTitle = 'old-project';
         $newProjectTitle = 'new-project';
         $project = Project::factory()->create([
-            'project_title' => $oldProjectTitle
+            'project_title' => $oldProjectTitle,
         ]);
         Project::factory()->create([
-            'project_title' => $newProjectTitle
+            'project_title' => $newProjectTitle,
         ]);
 
         $response = $this->actingAsSuperUser()->putJson($this->getRoute($project->id), [
-            'title' => $newProjectTitle
+            'title' => $newProjectTitle,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -140,9 +141,9 @@ final class UpdateProjectControllerTest extends BaseFeatureTestCase
             'message' => __('messages.exceptions.validation'),
             'errors' => [
                 'title' => [
-                    __('validation.unique', ['attribute' => 'title'])
-                ]
-            ]
+                    __('validation.unique', ['attribute' => 'title']),
+                ],
+            ],
         ]);
     }
 

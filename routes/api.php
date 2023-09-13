@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SelectProjectController;
 use App\Http\Controllers\Auth\UserProjectsController;
+use App\Http\Controllers\BaseinfoController;
 use App\Http\Controllers\Profile\V1\ChangeUserPasswordController;
 use App\Http\Controllers\Profile\V1\DeleteSignatureFileController;
 use App\Http\Controllers\Profile\V1\ShowUserProfileController;
@@ -21,4 +22,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('change-user-password', ChangeUserPasswordController::class)->name('change-user-password');
     Route::put('upload-signature', UploadSignatureController::class)->name('upload-signature');
     Route::delete('delete-signature', DeleteSignatureFileController::class)->name('delete-signature');
+
+    Route::get('baseinfo', BaseinfoController::class)->name('baseinfo');
 });

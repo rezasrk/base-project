@@ -15,7 +15,7 @@ class UpdateProjectController extends Controller
 {
     /**
      * Projects update
-     * 
+     *
      * @urlParam id Example: 63
      *
      * @response{

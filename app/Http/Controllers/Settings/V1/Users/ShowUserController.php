@@ -14,7 +14,7 @@ class ShowUserController extends Controller
 {
     /**
      * User show
-     * 
+     *
      * @urlParam id Example: 45
      *
      * @response{

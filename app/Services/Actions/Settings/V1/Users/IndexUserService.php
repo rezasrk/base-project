@@ -15,7 +15,7 @@ class IndexUserService
                 $query->where('username', $indexUserRequestDTO->getUsername());
             })
             ->when($indexUserRequestDTO->getFullName(), function ($query) use ($indexUserRequestDTO) {
-                $query->whereRaw("concat_ws(' ',name,family) like ?", ['%' . $indexUserRequestDTO->getFullName() . '%']);
+                $query->whereRaw("concat_ws(' ',name,family) like ?", ['%'.$indexUserRequestDTO->getFullName().'%']);
             })
             ->when($indexUserRequestDTO->getRoles(), function ($query) use ($indexUserRequestDTO) {
                 $query->whereHas('roles', function ($query) use ($indexUserRequestDTO) {

@@ -10,4 +10,5 @@ return [
     'project_settings' => 'Project settings',
     'user' => 'User',
     'signature' => 'Signature',
+    'baseinfo' => 'Baseinfo'
 ];

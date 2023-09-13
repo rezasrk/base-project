@@ -19,9 +19,9 @@ class ProjectSettingsService
                         'first_status' => $projectSettingsRequestDTO->getFirstRequestStatusId(),
                         'last_status' => $projectSettingsRequestDTO->getLastRequestStatusId(),
                         'between_statuses' => $projectSettingsRequestDTO->getBetweenStatusIds(),
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ]);
     }
 }

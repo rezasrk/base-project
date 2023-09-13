@@ -18,9 +18,9 @@ class ProjectSettingsResourceCollection extends ResourceCollection
                 'status' => [
                     'first_status' => $this->getFirstStatus($settings),
                     'last_status' => $this->getLastStatus($settings),
-                    'between_statuses' => $this->getBetweenStatuses($settings)
+                    'between_statuses' => $this->getBetweenStatuses($settings),
                 ],
-            ]
+            ],
         ];
     }
 
@@ -30,7 +30,7 @@ class ProjectSettingsResourceCollection extends ResourceCollection
 
         return [
             'id' => optional($baseinfo)->id,
-            'value' => __(optional($baseinfo)->value)
+            'value' => __(optional($baseinfo)->value),
         ];
     }
 
@@ -40,7 +40,7 @@ class ProjectSettingsResourceCollection extends ResourceCollection
 
         return [
             'id' => optional($baseinfo)->id,
-            'value' => __(optional($baseinfo)->value)
+            'value' => __(optional($baseinfo)->value),
         ];
     }
 
@@ -51,7 +51,7 @@ class ProjectSettingsResourceCollection extends ResourceCollection
             ->map(function ($baseinfo) {
                 return [
                     'id' => optional($baseinfo)->id,
-                    'value' => __(optional($baseinfo)->value)
+                    'value' => __(optional($baseinfo)->value),
                 ];
             })->all();
     }
