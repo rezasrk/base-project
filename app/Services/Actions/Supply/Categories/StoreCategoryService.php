@@ -7,7 +7,7 @@ use App\Services\Actions\Supply\DTO\Categories\StoreCategoryRequestDTO;
 
 class StoreCategoryService
 {
-    public function handle(StoreCategoryRequestDTO $storeCategoryRequestDTO)
+    public function handle(StoreCategoryRequestDTO $storeCategoryRequestDTO): void
     {
         Category::query()->create([
             'code' => $storeCategoryRequestDTO->getCode(),
@@ -15,7 +15,7 @@ class StoreCategoryService
             'category_parent_id' => $storeCategoryRequestDTO->getParentId(),
             'discipline_id' => $storeCategoryRequestDTO->getDiscipline(),
             'unit_id' => $storeCategoryRequestDTO->getCategoryUnit(),
-            'is_product'=>$storeCategoryRequestDTO->isMainName()
+            'is_product' => $storeCategoryRequestDTO->isMainName()
         ]);
     }
 }
