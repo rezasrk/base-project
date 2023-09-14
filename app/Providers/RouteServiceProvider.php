@@ -24,6 +24,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->routes(function () {
             $this->registerAPIRoute();
             $this->registerSettingsRoute();
+            $this->registerSuppliesAPI();
         });
     }
 
@@ -38,5 +39,11 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware(['api', 'auth:sanctum', 'access.control'])
             ->group(base_path('routes/settings/settings_v1.php'));
+    }
+
+    private function registerSuppliesAPI()
+    {
+        Route::middleware(['api', 'auth:sanctum', 'access.control'])
+            ->group(base_path('routes/supply/supplies_v1.php'));
     }
 }
