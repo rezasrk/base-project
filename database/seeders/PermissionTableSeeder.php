@@ -112,7 +112,7 @@ class PermissionTableSeeder extends Seeder
                 'guard_name' => 'sanctum',
             ],
             [
-                'id' => 14,
+                'id' => 15,
                 'name' => 'supplies.categories.index',
                 'parent_id' => 12,
                 'status' => 1,
