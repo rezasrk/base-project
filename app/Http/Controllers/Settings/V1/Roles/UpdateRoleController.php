@@ -8,6 +8,7 @@ use App\Services\Actions\Settings\V1\Roles\UpdateRoleService;
 
 /**
  * @group Settings
+ * @subGroup Role
  *
  * @authenticated
  */

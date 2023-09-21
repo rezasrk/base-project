@@ -14,8 +14,8 @@ class BaseinfoController extends Controller
 {
     /**
      * Baseinfo list
-     * Valid type "request_status,request_type"
      *
+     * Valid type "request_status,request_type"
      * @queryParam type Example: request_type,request_stats
      *
      * @response{

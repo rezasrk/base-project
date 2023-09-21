@@ -8,6 +8,7 @@ use App\Services\Actions\Settings\V1\Projects\StoreProjectService;
 
 /**
  * @group Settings
+ * @subGroup Project
  *
  * @authenticated
  */

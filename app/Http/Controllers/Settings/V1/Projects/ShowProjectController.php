@@ -7,6 +7,7 @@ use App\Services\Actions\Settings\V1\Projects\ShowProjectService;
 
 /**
  * @group Settings
+ * @subGroup Project
  *
  * @authenticated
  */

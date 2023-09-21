@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 /**
  * @group Settings
+ * @subGroup User
  *
  * @authenticated
  */
