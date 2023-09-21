@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Supply\Categories\IndexCategoryController;
 use App\Http\Controllers\Supply\Categories\ShowCategoryController;
+use App\Http\Controllers\Supply\Categories\SortCategoryController;
 use App\Http\Controllers\Supply\Categories\StoreCategoryController;
 use App\Http\Controllers\Supply\Categories\UpdateCategoryController;
 use Illuminate\Support\Facades\Route;
@@ -10,3 +11,4 @@ Route::post('categories', StoreCategoryController::class)->name('categories.stor
 Route::get('{id}/categories', ShowCategoryController::class)->name('categories.show');
 Route::put('{id}/categories', UpdateCategoryController::class)->name('categories.update');
 Route::get('categories', IndexCategoryController::class)->name('categories.index');
+Route::post('categories/sort', SortCategoryController::class)->name('categories.sort');
