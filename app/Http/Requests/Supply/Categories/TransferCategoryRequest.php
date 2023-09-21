@@ -19,11 +19,11 @@ class TransferCategoryRequest extends BaseFormRequest
         return [
             'category_parent_id' => [
                 'description' => 'ID of parent category',
-                'category_parent_id' => 23
+                'example' => 23
             ],
             'category_id' => [
                 'description' => 'ID of category',
-                'category_parent_id' => 14
+                'example' => 14
             ]
         ];
     }
