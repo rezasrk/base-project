@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 /**
  * @group Supply
+ * @subGroup Category
  *
  * @authenticated
  */

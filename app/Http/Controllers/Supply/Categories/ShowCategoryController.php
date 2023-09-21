@@ -7,6 +7,7 @@ use App\Services\Actions\Supply\Categories\ShowCategoryService;
 
 /**
  * @group Supply
+ * @subGroup Category
  *
  * @authenticated
  */
