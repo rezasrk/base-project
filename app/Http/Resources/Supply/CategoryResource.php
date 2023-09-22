@@ -15,7 +15,7 @@ class CategoryResource extends JsonResource
             'title' => $this->category_title,
             'code' => $this->code,
             'discipline' => new BaseinfoResource($this->discipline),
-            'unit' => new BaseinfoResource($this->unit)
+            'unit' => new BaseinfoResource($this->unit),
         ];
     }
 }

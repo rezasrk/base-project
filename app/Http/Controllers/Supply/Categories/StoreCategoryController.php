@@ -9,6 +9,7 @@ use App\Services\Actions\Supply\DTO\Categories\StoreCategoryRequestDTO;
 
 /**
  * @group Supply
+ *
  * @subGroup Category
  *
  * @authenticated

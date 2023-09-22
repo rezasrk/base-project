@@ -8,6 +8,7 @@ use App\Services\Actions\Supply\Categories\SortCategoryService;
 
 /**
  * @group Supply
+ *
  * @subGroup Category
  *
  * @authenticated

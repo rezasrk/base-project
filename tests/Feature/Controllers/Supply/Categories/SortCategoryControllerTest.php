@@ -21,23 +21,23 @@ final class SortCategoryControllerTest extends BaseFeatureTestCase
         $data = $categories->map(function ($item, $key) {
             return [
                 'category_id' => $item->id,
-                'priority' => $key
+                'priority' => $key,
             ];
         })->all();
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
-            'data' => $data
+            'data' => $data,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
             'status' => 'success',
-            'message' => __('messages.update', ['title' => __('title.category')])
+            'message' => __('messages.update', ['title' => __('title.category')]),
         ]);
         foreach ($data as $category) {
             $this->assertDatabaseHas('categories', [
                 'id' => $category['category_id'],
-                'priority' => $category['priority']
+                'priority' => $category['priority'],
             ]);
         }
     }
@@ -74,7 +74,7 @@ final class SortCategoryControllerTest extends BaseFeatureTestCase
         $this->assertEquals([
             'data' => ['present', 'array', 'min:1'],
             'data.*.category_id' => ['required', 'exists:categories,id'],
-            'data.*.priority' => ['required', 'int']
+            'data.*.priority' => ['required', 'int'],
         ], (new SortCategoryRequest())->rules());
     }
 

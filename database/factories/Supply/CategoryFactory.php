@@ -16,7 +16,7 @@ class CategoryFactory extends Factory
             'category_parent_id' => 0,
             'discipline_id' => CategoryDisciplineEnum::GENERAL->value,
             'unit_id' => CategoryUnitEnum::KILO_GRAM->value,
-            'is_product' => 0
+            'is_product' => 0,
         ];
     }
 }

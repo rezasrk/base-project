@@ -11,7 +11,7 @@ class SortCategoryService
         foreach ($sortCategories as $sortCategory) {
             Category::query()->where('id', $sortCategory['category_id'])
                 ->update([
-                    'priority' => $sortCategory['priority']
+                    'priority' => $sortCategory['priority'],
                 ]);
         }
     }

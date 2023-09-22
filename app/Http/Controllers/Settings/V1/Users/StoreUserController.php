@@ -9,6 +9,7 @@ use App\Services\Actions\Settings\V1\Users\StoreUserService;
 
 /**
  * @group Settings
+ *
  * @subGroup User
  *
  * @authenticated

@@ -9,7 +9,7 @@ class TransferCategoryService
     public function handle(int $parentId, int $categoryId)
     {
         Category::query()->findOrFail($categoryId)->update([
-            'category_parent_id' => $parentId
+            'category_parent_id' => $parentId,
         ]);
     }
 }

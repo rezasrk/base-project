@@ -24,11 +24,11 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
         $parentId = 0;
         $discipline = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::DISCIPLINE->value,
-            'value' => 'General'
+            'value' => 'General',
         ]);
         $unit = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::UNIT_MEASURE->value,
-            'value' => 'Meter'
+            'value' => 'Meter',
         ]);
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
@@ -37,7 +37,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'parent_id' => $parentId,
             'discipline' => $discipline->id,
             'unit' => $unit->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
@@ -51,7 +51,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'category_parent_id' => $parentId,
             'discipline_id' => $discipline->id,
             'unit_id' => $unit->id,
-            'is_product' => 0
+            'is_product' => 0,
         ]);
     }
 
@@ -63,11 +63,11 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
         $title = 'category';
         $discipline = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::DISCIPLINE->value,
-            'value' => 'General'
+            'value' => 'General',
         ]);
         $unit = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::UNIT_MEASURE->value,
-            'value' => 'Meter'
+            'value' => 'Meter',
         ]);
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
@@ -77,7 +77,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'discipline' => $discipline->id,
             'unit' => $unit->id,
             'parent_id' => $categoryParent->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
@@ -91,7 +91,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'category_parent_id' => $categoryParent->id,
             'discipline_id' => $discipline->id,
             'unit_id' => $unit->id,
-            'is_product' => 0
+            'is_product' => 0,
         ]);
     }
 
@@ -103,11 +103,11 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
         $title = 'category';
         $discipline = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::DISCIPLINE->value,
-            'value' => 'General'
+            'value' => 'General',
         ]);
         $unit = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::UNIT_MEASURE->value,
-            'value' => 'Meter'
+            'value' => 'Meter',
         ]);
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
@@ -131,7 +131,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'category_parent_id' => $categoryParent->id,
             'discipline_id' => $discipline->id,
             'unit_id' => $unit->id,
-            'is_product' => 1
+            'is_product' => 1,
         ]);
     }
 
@@ -168,9 +168,9 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'code' => ['required', 'unique:categories,code', 'string'],
             'title' => ['required', 'string', 'max:400'],
             'parent_id' => ['required'],
-            'discipline' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::DISCIPLINE->value],
-            'unit' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::UNIT_MEASURE->value],
-            'is_main_name' => ['required', 'in:0,1']
+            'discipline' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::DISCIPLINE->value],
+            'unit' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::UNIT_MEASURE->value],
+            'is_main_name' => ['required', 'in:0,1'],
         ], (new StoreCategoryRequest())->rules());
     }
 
@@ -187,15 +187,15 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
         $title = 'category';
         $parentId = 0;
         Category::factory()->create([
-            'code' => $code
+            'code' => $code,
         ]);
         $discipline = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::DISCIPLINE->value,
-            'value' => 'General'
+            'value' => 'General',
         ]);
         $unit = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::UNIT_MEASURE->value,
-            'value' => 'Meter'
+            'value' => 'Meter',
         ]);
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
@@ -204,7 +204,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'parent_id' => $parentId,
             'discipline' => $discipline->id,
             'unit' => $unit->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -227,7 +227,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
         $parentId = 0;
         $baseinfo = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::UNIT_MEASURE->value,
-            'value' => 'Meter'
+            'value' => 'Meter',
         ]);
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
@@ -236,7 +236,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'parent_id' => $parentId,
             'discipline' => $baseinfo->id,
             'unit' => $baseinfo->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -259,7 +259,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
         $parentId = 0;
         $baseinfo = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::DISCIPLINE->value,
-            'value' => 'General'
+            'value' => 'General',
         ]);
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
@@ -268,7 +268,7 @@ class StoreCategoryControllerTest extends BaseFeatureTestCase
             'parent_id' => $parentId,
             'discipline' => $baseinfo->id,
             'unit' => $baseinfo->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);

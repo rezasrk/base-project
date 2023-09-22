@@ -16,7 +16,7 @@ class SortCategoryRequest extends BaseFormRequest
         return [
             'data' => ['present', 'array', 'min:1'],
             'data.*.category_id' => ['required', 'exists:categories,id'],
-            'data.*.priority' => ['required', 'int']
+            'data.*.priority' => ['required', 'int'],
         ];
     }
 }

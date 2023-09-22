@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 /**
  * @group Supply
+ *
  * @subGroup Category
  *
  * @authenticated
@@ -25,7 +26,7 @@ class IndexCategoryController extends Controller
      *       "id":124,
      *       "title":"Category title",
      *       "code":"05",
-     *       "discipline":{ 
+     *       "discipline":{
      *           "id":34,
      *           "value":"General"
      *       },

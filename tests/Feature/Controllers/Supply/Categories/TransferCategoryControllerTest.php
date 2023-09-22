@@ -20,12 +20,12 @@ final class TransferCategoryControllerTest extends BaseFeatureTestCase
         $oldCategoryParent = Category::factory()->create();
         $newCategoryParent = Category::factory()->create();
         $category = Category::factory()->create([
-            'category_parent_id' => $oldCategoryParent->id
+            'category_parent_id' => $oldCategoryParent->id,
         ]);
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
             'category_parent_id' => $newCategoryParent->id,
-            'category_id' => $category->id
+            'category_id' => $category->id,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
@@ -35,7 +35,7 @@ final class TransferCategoryControllerTest extends BaseFeatureTestCase
         ]);
         $this->assertDatabaseHas('categories', [
             'id' => $category->id,
-            'category_parent_id' => $newCategoryParent->id
+            'category_parent_id' => $newCategoryParent->id,
         ]);
     }
 
@@ -44,12 +44,12 @@ final class TransferCategoryControllerTest extends BaseFeatureTestCase
     {
         $oldCategoryParent = Category::factory()->create();
         $category = Category::factory()->create([
-            'category_parent_id' => $oldCategoryParent->id
+            'category_parent_id' => $oldCategoryParent->id,
         ]);
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
             'category_parent_id' => 962222222544555,
-            'category_id' => $category->id
+            'category_id' => $category->id,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -71,7 +71,7 @@ final class TransferCategoryControllerTest extends BaseFeatureTestCase
 
         $response = $this->actingAsSuperUser()->postJson($this->getRoute(), [
             'category_parent_id' => $oldCategoryParent->id,
-            'category_id' => 6587458666665445
+            'category_id' => 6587458666665445,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -117,7 +117,7 @@ final class TransferCategoryControllerTest extends BaseFeatureTestCase
     {
         $this->assertEquals([
             'category_parent_id' => ['required', 'exists:categories,id'],
-            'category_id' => ['required', 'exists:categories,id']
+            'category_id' => ['required', 'exists:categories,id'],
         ], (new TransferCategoryRequest())->rules());
     }
 

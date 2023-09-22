@@ -10,7 +10,7 @@ class TransferCategoryRequest extends BaseFormRequest
     {
         return [
             'category_parent_id' => ['required', 'exists:categories,id'],
-            'category_id' => ['required', 'exists:categories,id']
+            'category_id' => ['required', 'exists:categories,id'],
         ];
     }
 
@@ -19,12 +19,12 @@ class TransferCategoryRequest extends BaseFormRequest
         return [
             'category_parent_id' => [
                 'description' => 'ID of parent category',
-                'example' => 23
+                'example' => 23,
             ],
             'category_id' => [
                 'description' => 'ID of category',
-                'example' => 14
-            ]
+                'example' => 14,
+            ],
         ];
     }
 }

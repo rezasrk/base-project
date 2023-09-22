@@ -11,5 +11,5 @@ return [
     'user' => 'User',
     'signature' => 'Signature',
     'baseinfo' => 'Baseinfo',
-    'category' => 'Category'
+    'category' => 'Category',
 ];

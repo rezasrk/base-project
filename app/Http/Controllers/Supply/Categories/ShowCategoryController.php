@@ -7,6 +7,7 @@ use App\Services\Actions\Supply\Categories\ShowCategoryService;
 
 /**
  * @group Supply
+ *
  * @subGroup Category
  *
  * @authenticated
@@ -23,7 +24,7 @@ class ShowCategoryController extends Controller
      *       "id":124,
      *       "title":"Category title",
      *       "code":"05",
-     *       "discipline":{ 
+     *       "discipline":{
      *           "id":34,
      *           "value":"General"
      *       },

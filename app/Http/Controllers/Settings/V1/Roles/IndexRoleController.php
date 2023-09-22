@@ -7,6 +7,7 @@ use App\Services\Actions\Settings\V1\Roles\IndexRoleService;
 
 /**
  * @group Settings
+ *
  * @subGroup Role
  *
  * @authenticated

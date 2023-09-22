@@ -9,6 +9,7 @@ use App\Services\Actions\Supply\DTO\Categories\UpdateCategoryRequestDTO;
 
 /**
  * @group Supply
+ *
  * @subGroup Category
  *
  * @authenticated

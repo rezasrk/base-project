@@ -8,6 +8,7 @@ use App\Services\Actions\Supply\Categories\TransferCategoryService;
 
 /**
  * @group Supply
+ *
  * @subGroup Category
  *
  * @authenticated

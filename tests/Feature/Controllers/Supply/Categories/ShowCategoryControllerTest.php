@@ -31,13 +31,13 @@ final class ShowCategoryControllerTest extends BaseFeatureTestCase
                 'code' => $category->code,
                 'discipline' => [
                     'id' => $discipline->id,
-                    'value' => $discipline->value
+                    'value' => $discipline->value,
                 ],
                 'unit' => [
                     'id' => $unit->id,
-                    'value' => $unit->value
-                ]
-            ]
+                    'value' => $unit->value,
+                ],
+            ],
         ]);
     }
 

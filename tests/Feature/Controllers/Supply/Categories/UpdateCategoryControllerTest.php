@@ -26,11 +26,11 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
         $parentId = 0;
         $discipline = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::DISCIPLINE->value,
-            'value' => 'General'
+            'value' => 'General',
         ]);
         $unit = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::UNIT_MEASURE->value,
-            'value' => 'Meter'
+            'value' => 'Meter',
         ]);
 
         $response = $this->actingAsSuperUser()->putJson($this->getRoute($category->id), [
@@ -39,7 +39,7 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
             'parent_id' => $parentId,
             'discipline' => $discipline->id,
             'unit' => $unit->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
@@ -53,7 +53,7 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
             'category_parent_id' => $parentId,
             'discipline_id' => $discipline->id,
             'unit_id' => $unit->id,
-            'is_product' => 0
+            'is_product' => 0,
         ]);
     }
 
@@ -96,12 +96,12 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
         });
 
         $this->assertEquals([
-            'code' => ['required', 'unique:categories,code,' . $categoryId . ',id', 'string'],
+            'code' => ['required', 'unique:categories,code,'.$categoryId.',id', 'string'],
             'title' => ['required', 'string', 'max:400'],
             'parent_id' => ['required'],
-            'discipline' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::DISCIPLINE->value],
-            'unit' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::UNIT_MEASURE->value],
-            'is_main_name' => ['required', 'in:0,1']
+            'discipline' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::DISCIPLINE->value],
+            'unit' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::UNIT_MEASURE->value],
+            'is_main_name' => ['required', 'in:0,1'],
         ], $request->rules());
     }
 
@@ -118,15 +118,15 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
         $title = 'category';
         $parentId = 0;
         Category::factory()->create([
-            'code' => $code
+            'code' => $code,
         ]);
         $discipline = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::DISCIPLINE->value,
-            'value' => 'General'
+            'value' => 'General',
         ]);
         $unit = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::UNIT_MEASURE->value,
-            'value' => 'Meter'
+            'value' => 'Meter',
         ]);
         $category = Category::factory()->create();
 
@@ -136,7 +136,7 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
             'parent_id' => $parentId,
             'discipline' => $discipline->id,
             'unit' => $unit->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -159,7 +159,7 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
         $parentId = 0;
         $baseinfo = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::UNIT_MEASURE->value,
-            'value' => 'Meter'
+            'value' => 'Meter',
         ]);
         $category = Category::factory()->create();
 
@@ -169,7 +169,7 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
             'parent_id' => $parentId,
             'discipline' => $baseinfo->id,
             'unit' => $baseinfo->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -192,7 +192,7 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
         $parentId = 0;
         $baseinfo = Baseinfo::factory()->create([
             'type' => BaseinfoTypesEnum::DISCIPLINE->value,
-            'value' => 'General'
+            'value' => 'General',
         ]);
         $category = Category::factory()->create();
 
@@ -202,7 +202,7 @@ final class UpdateCategoryControllerTest extends BaseFeatureTestCase
             'parent_id' => $parentId,
             'discipline' => $baseinfo->id,
             'unit' => $baseinfo->id,
-            'is_main_name' => 0
+            'is_main_name' => 0,
         ]);
 
         $response->assertStatus(JsonResponse::HTTP_UNPROCESSABLE_ENTITY);

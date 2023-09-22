@@ -18,7 +18,7 @@ final class IndexCategoryControllerTest extends BaseFeatureTestCase
         $category = Category::factory()->create([
             'discipline_id' => $discipline->id,
             'unit_id' => $unit->id,
-            'category_parent_id' => 0
+            'category_parent_id' => 0,
         ]);
 
         $response = $this->actingAsSuperUser()->getJson($this->getRoute());
@@ -34,20 +34,20 @@ final class IndexCategoryControllerTest extends BaseFeatureTestCase
                     'code' => $category->code,
                     'discipline' => [
                         'id' => $discipline->id,
-                        'value' => $discipline->value
+                        'value' => $discipline->value,
                     ],
                     'unit' => [
                         'id' => $unit->id,
-                        'value' => $unit->value
-                    ]
-                ]
+                        'value' => $unit->value,
+                    ],
+                ],
             ],
             'pagination_information' => [
                 'current_page' => 1,
                 'last_page' => 1,
                 'per_page' => 300,
-                'total' => 1
-            ]
+                'total' => 1,
+            ],
         ]);
     }
 

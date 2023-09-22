@@ -11,7 +11,7 @@ class BaseinfoResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'value' => __($this->value)
+            'value' => __($this->value),
         ];
     }
 }

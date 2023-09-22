@@ -15,7 +15,7 @@ class StoreCategoryService
             'category_parent_id' => $storeCategoryRequestDTO->getParentId(),
             'discipline_id' => $storeCategoryRequestDTO->getDiscipline(),
             'unit_id' => $storeCategoryRequestDTO->getCategoryUnit(),
-            'is_product' => $storeCategoryRequestDTO->isMainName()
+            'is_product' => $storeCategoryRequestDTO->isMainName(),
         ]);
     }
 }

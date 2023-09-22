@@ -17,7 +17,7 @@ class UpdateCategoryService
                 'category_parent_id' => $updateCategoryRequestDTO->getParentId(),
                 'discipline_id' => $updateCategoryRequestDTO->getDiscipline(),
                 'unit_id' => $updateCategoryRequestDTO->getCategoryUnit(),
-                'is_product' => $updateCategoryRequestDTO->isMainName()
+                'is_product' => $updateCategoryRequestDTO->isMainName(),
             ]);
     }
 }

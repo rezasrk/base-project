@@ -13,9 +13,9 @@ class StoreCategoryRequest extends BaseFormRequest
             'code' => ['required', 'unique:categories,code', 'string'],
             'title' => ['required', 'string', 'max:400'],
             'parent_id' => ['required'],
-            'discipline' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::DISCIPLINE->value],
-            'unit' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::UNIT_MEASURE->value],
-            'is_main_name' => ['required', 'in:0,1']
+            'discipline' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::DISCIPLINE->value],
+            'unit' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::UNIT_MEASURE->value],
+            'is_main_name' => ['required', 'in:0,1'],
         ];
     }
 
@@ -24,11 +24,11 @@ class StoreCategoryRequest extends BaseFormRequest
         return [
             'code' => [
                 'description' => 'The code of category',
-                'example' => '01'
+                'example' => '01',
             ],
             'title' => [
                 'description' => 'The title of category',
-                'example' => 'Title'
+                'example' => 'Title',
             ],
             'parent_id' => [
                 'description' => 'The parent id of category',
@@ -36,16 +36,16 @@ class StoreCategoryRequest extends BaseFormRequest
             ],
             'discipline' => [
                 'description' => 'The discipline of category',
-                'example' => 35
+                'example' => 35,
             ],
             'unit' => [
                 'description' => 'The unit of category',
-                'example' => 96
+                'example' => 96,
             ],
             'is_main_name' => [
                 'description' => 'Is the main name',
-                'example' => '1 Or 0'
-            ]
+                'example' => '1 Or 0',
+            ],
         ];
     }
 }
