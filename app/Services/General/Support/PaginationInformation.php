@@ -12,7 +12,7 @@ trait PaginationInformation
                 'last_page' => $lastPage,
                 'per_page' => $perPage,
                 'total' => $total,
-            ],
+            ]
         ];
     }
 }

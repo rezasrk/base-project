@@ -35,7 +35,13 @@ class IndexCategoryController extends Controller
      *           "value":"Kilo Gram"
      *       }
      *      }
-     *    ]
+     *    ],
+     *    "pagination":{
+     *       "current_page":1,
+     *       "last_page":1,
+     *       "per_page":70
+     *       "total":1
+     *    }
      * }
      */
     public function __invoke(Request $request, IndexCategoryService $indexCategoryService)

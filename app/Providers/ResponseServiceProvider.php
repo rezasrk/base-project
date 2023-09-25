@@ -23,13 +23,14 @@ class ResponseServiceProvider extends ServiceProvider
 
     private function successResponse()
     {
-        Response::macro('success', function (string $message, array $data = []) {
+        Response::macro('success', function (string $message, array $data = [], array $additionalData = []) {
             return response()->json(
                 collect([
                     'status' => 'success',
                     'message' => $message,
                 ])
                     ->merge(['data' => $data])
+                    ->merge($additionalData)
                     ->filter()
                     ->all(),
                 JsonResponse::HTTP_OK
