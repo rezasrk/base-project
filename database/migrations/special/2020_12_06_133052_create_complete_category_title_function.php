@@ -12,9 +12,9 @@ class CreateCompleteCategoryTitleFunction extends Migration
      */
     public function up()
     {
-        DB::unprepared('drop function if exists completeCategoryTitle;');
+        DB::unprepared('drop function if exists complete_category_title;');
         DB::unprepared("
-        create function completeCategoryTitle(categoryId int)
+        create function complete_category_title(categoryId int)
         returns text charset utf8 deterministic
         begin
             declare fullTitle text charset utf8;
@@ -47,7 +47,6 @@ class CreateCompleteCategoryTitleFunction extends Migration
        		return fullTitle;
         end
         ");
-
     }
 
     /**
@@ -57,6 +56,6 @@ class CreateCompleteCategoryTitleFunction extends Migration
      */
     public function down()
     {
-        DB::unprepared('drop function if exists completeCategoryTitle;');
+        DB::unprepared('drop function if exists complete_category_title;');
     }
 }
