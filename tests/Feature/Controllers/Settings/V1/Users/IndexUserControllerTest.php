@@ -47,7 +47,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                             'permissions' => [
                                 [
                                     'id' => $permission->id,
-                                    'name' => 'permissions.'.$permission->name,
+                                    'name' => 'permissions.' . $permission->name,
                                     'parent_id' => $permission->parent_id,
                                 ],
                             ],
@@ -55,7 +55,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                     ],
                 ],
             ],
-            'pagination_information' => [
+            'pagination' => [
                 'current_page' => 1,
                 'last_page' => 1,
                 'per_page' => 30,
@@ -80,7 +80,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
             'username' => $username,
         ]);
 
-        $response = $this->actingAsSuperUser()->getJson($this->getRoute().'?username='.$username);
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute() . '?username=' . $username);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
@@ -106,7 +106,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                             'permissions' => [
                                 [
                                     'id' => $permission->id,
-                                    'name' => 'permissions.'.$permission->name,
+                                    'name' => 'permissions.' . $permission->name,
                                     'parent_id' => $permission->parent_id,
                                 ],
                             ],
@@ -114,7 +114,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                     ],
                 ],
             ],
-            'pagination_information' => [
+            'pagination' => [
                 'current_page' => 1,
                 'last_page' => 1,
                 'per_page' => 30,
@@ -142,7 +142,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
             'family' => $family,
         ]);
 
-        $response = $this->actingAsSuperUser()->getJson($this->getRoute().'?full_name='.$name.' '.$family);
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute() . '?full_name=' . $name . ' ' . $family);
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
@@ -168,7 +168,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                             'permissions' => [
                                 [
                                     'id' => $permission->id,
-                                    'name' => 'permissions.'.$permission->name,
+                                    'name' => 'permissions.' . $permission->name,
                                     'parent_id' => $permission->parent_id,
                                 ],
                             ],
@@ -176,7 +176,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                     ],
                 ],
             ],
-            'pagination_information' => [
+            'pagination' => [
                 'current_page' => 1,
                 'last_page' => 1,
                 'per_page' => 30,
@@ -196,7 +196,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
         User::factory()->create();
         $user = User::factory()->hasAttached($project)->hasAttached($role)->create();
 
-        $response = $this->actingAsSuperUser()->getJson($this->getRoute().'?roles='.$role->id.',');
+        $response = $this->actingAsSuperUser()->getJson($this->getRoute() . '?roles=' . $role->id . ',');
 
         $response->assertStatus(JsonResponse::HTTP_OK);
         $response->assertExactJson([
@@ -222,7 +222,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                             'permissions' => [
                                 [
                                     'id' => $permission->id,
-                                    'name' => 'permissions.'.$permission->name,
+                                    'name' => 'permissions.' . $permission->name,
                                     'parent_id' => $permission->parent_id,
                                 ],
                             ],
@@ -230,7 +230,7 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                     ],
                 ],
             ],
-            'pagination_information' => [
+            'pagination' => [
                 'current_page' => 1,
                 'last_page' => 1,
                 'per_page' => 30,

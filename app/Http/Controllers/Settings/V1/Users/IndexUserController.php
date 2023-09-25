@@ -53,7 +53,13 @@ class IndexUserController extends Controller
      *               }
      *           ]
      *         }
-     *   ]
+     *    ]
+     *    "pagination":{
+     *       "current_page":1,
+     *       "last_page":1,
+     *       "per_page":30
+     *       "total":1
+     *    }
      * }
      */
     public function __invoke(Request $request, IndexUserService $indexUserService)

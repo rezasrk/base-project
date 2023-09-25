@@ -31,13 +31,13 @@ final class IndexRoleControllerTest extends BaseFeatureTestCase
                     'permissions' => [
                         [
                             'id' => $permission->id,
-                            'name' => 'permissions.'.$permission->name,
+                            'name' => 'permissions.' . $permission->name,
                             'parent_id' => $permission->parent_id,
                         ],
                     ],
                 ],
             ],
-            'pagination_information' => [
+            'pagination' => [
                 'current_page' => 1,
                 'last_page' => 1,
                 'per_page' => 30,

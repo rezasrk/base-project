@@ -38,7 +38,7 @@ class IndexRoleController extends Controller
      *           ]
      *        }
      *    ],
-     *    "pagination_information":{
+     *    "pagination":{
      *       "current_page":1,
      *       "last_page":1,
      *       "per_page":30
