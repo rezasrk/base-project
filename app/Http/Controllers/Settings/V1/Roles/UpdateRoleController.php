@@ -11,7 +11,7 @@ use App\Services\Actions\Settings\V1\Roles\UpdateRoleService;
  *
  * @subGroup Role
  *
- * @authenticated
+ *
  */
 class UpdateRoleController extends Controller
 {

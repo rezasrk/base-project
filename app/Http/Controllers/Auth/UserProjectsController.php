@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 /**
  * @group Auth
  *
- * @authenticated
+ *
  */
 class UserProjectsController extends Controller
 {

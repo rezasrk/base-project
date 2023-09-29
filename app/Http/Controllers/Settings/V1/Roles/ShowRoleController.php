@@ -10,7 +10,7 @@ use App\Services\Actions\Settings\V1\Roles\ShowRoleService;
  *
  * @subGroup Role
  *
- * @authenticated
+ *
  */
 class ShowRoleController extends Controller
 {

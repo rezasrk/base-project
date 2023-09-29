@@ -23,9 +23,9 @@ class UpdateRoleRequest extends BaseFormRequest
                 'description' => 'This name should be unique in this panel',
                 'example' => 'Writer',
             ],
-            'permissions' => [
+            'permissions.*' => [
                 'description' => 'Permission',
-                'example' => [1],
+                'example' => 1,
             ],
             'status' => [
                 'description' => 'Status of role',

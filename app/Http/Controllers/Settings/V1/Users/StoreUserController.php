@@ -12,7 +12,7 @@ use App\Services\Actions\Settings\V1\Users\StoreUserService;
  *
  * @subGroup User
  *
- * @authenticated
+ *
  */
 class StoreUserController extends Controller
 {

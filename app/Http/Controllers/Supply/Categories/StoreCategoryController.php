@@ -12,7 +12,7 @@ use App\Services\Actions\Supply\DTO\Categories\StoreCategoryRequestDTO;
  *
  * @subGroup Category
  *
- * @authenticated
+ *
  */
 class StoreCategoryController extends Controller
 {

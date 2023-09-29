@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
  *
  * @subGroup User
  *
- * @authenticated
+ *
  */
 class IndexUserController extends Controller
 {

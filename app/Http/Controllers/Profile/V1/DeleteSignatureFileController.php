@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 /**
  * @group Profile
  *
- * @authenticated
+ *
  */
 class DeleteSignatureFileController extends Controller
 {

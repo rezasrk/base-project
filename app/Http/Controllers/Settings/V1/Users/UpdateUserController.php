@@ -12,7 +12,7 @@ use App\Services\Actions\Settings\V1\Users\UpdateUserService;
  *
  * @subGroup User
  *
- * @authenticated
+ *
  */
 class UpdateUserController extends Controller
 {

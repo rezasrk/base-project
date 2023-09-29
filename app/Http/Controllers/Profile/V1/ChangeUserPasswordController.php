@@ -10,7 +10,7 @@ use App\Services\Actions\Profile\V1\DTO\ChangeUserPasswordRequestDTO;
 /**
  * @group Profile
  *
- * @authenticated
+ *
  */
 class ChangeUserPasswordController extends Controller
 {

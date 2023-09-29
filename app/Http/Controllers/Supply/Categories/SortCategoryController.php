@@ -11,7 +11,7 @@ use App\Services\Actions\Supply\Categories\SortCategoryService;
  *
  * @subGroup Category
  *
- * @authenticated
+ *
  */
 class SortCategoryController extends Controller
 {

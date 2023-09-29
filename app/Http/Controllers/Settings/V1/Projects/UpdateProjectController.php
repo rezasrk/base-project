@@ -11,7 +11,7 @@ use App\Services\Actions\Settings\V1\Projects\UpdateProjectService;
  *
  * @subGroup Project
  *
- * @authenticated
+ *
  */
 class UpdateProjectController extends Controller
 {

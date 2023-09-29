@@ -11,7 +11,7 @@ use App\Services\Actions\Settings\V1\Projects\StoreProjectService;
  *
  * @subGroup Project
  *
- * @authenticated
+ *
  */
 class StoreProjectController extends Controller
 {

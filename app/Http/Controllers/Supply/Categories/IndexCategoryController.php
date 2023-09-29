@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
  * @group Supply
  *
  * @subGroup Category
- *
- * @authenticated
  */
 class IndexCategoryController extends Controller
 {

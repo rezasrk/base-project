@@ -12,7 +12,7 @@ use App\Services\Actions\Supply\DTO\Categories\UpdateCategoryRequestDTO;
  *
  * @subGroup Category
  *
- * @authenticated
+ *
  */
 class UpdateCategoryController extends Controller
 {

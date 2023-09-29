@@ -10,7 +10,7 @@ use App\Services\Actions\Settings\V1\Users\ShowUserService;
  *
  * @subGroup User
  *
- * @authenticated
+ *
  */
 class ShowUserController extends Controller
 {

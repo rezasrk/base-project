@@ -12,7 +12,7 @@ use App\Services\Actions\Settings\V1\Projects\ProjectSettingsService;
  *
  * @subGroup Project
  *
- * @authenticated
+ *
  */
 class ProjectSettingsController extends Controller
 {

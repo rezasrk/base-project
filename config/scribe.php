@@ -36,7 +36,7 @@ return [
                 /*
                  * Match only routes whose paths match this pattern (use * as a wildcard to match any characters). Example: 'users/*'.
                  */
-                'prefixes' => ['*'],
+                'prefixes' => ['supplies/*', 'settings/*', 'api/*'],
 
                 /*
                  * Match only routes whose domains match this pattern (use * as a wildcard to match any characters). Example: 'api.*'.
@@ -54,7 +54,7 @@ return [
              * The route can be referenced by name or path here. Wildcards are supported.
              */
             'include' => [
-                // 'users.index', 'healthcheck*'
+                //api/* 
             ],
 
             /*
@@ -73,8 +73,8 @@ return [
                  * Additional headers to be added to the example requests
                  */
                 'headers' => [
-                    'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
+                    'Authorization' => 'Bearer 12|pkdbansvcgftrikjfbvssf654'
                 ],
 
                 /*
@@ -215,20 +215,20 @@ return [
 
         /*
          * Set this to true if your API should be authenticated by default. If so, you must also set `enabled` (above) to true.
-         * You can then use @unauthenticated or @authenticatedd on individual endpoints to change their status from the default.
+         * You can then use @unauthenticated or @authenticated on individual endpoints to change their status from the default.
          */
-        'default' => false,
+        'default' => true,
 
         /*
          * Where is the auth value meant to be sent in a request?
          * Options: query, body, basic, bearer, header (for custom header)
          */
-        'in' => 'bearer',
+        'in' => 'header',
 
         /*
          * The name of the auth parameter (eg token, key, apiKey) or header (eg Authorization, Api-Key).
          */
-        'name' => 'key',
+        'name' => 'Authorization',
 
         /*
          * The value of the parameter to be used by Scribe to authenticate response calls.
@@ -285,6 +285,12 @@ return [
             }
 
             (401, Example error response)
+            {
+                "status": "error",
+                "message": "Unauthenticated"
+            }
+
+            (403, Example error response)
             {
                 "status": "error",
                 "message": "Unauthenticated"

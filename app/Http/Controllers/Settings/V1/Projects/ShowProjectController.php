@@ -10,7 +10,7 @@ use App\Services\Actions\Settings\V1\Projects\ShowProjectService;
  *
  * @subGroup Project
  *
- * @authenticated
+ *
  */
 class ShowProjectController extends Controller
 {

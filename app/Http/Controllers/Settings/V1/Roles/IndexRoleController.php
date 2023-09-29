@@ -10,7 +10,7 @@ use App\Services\Actions\Settings\V1\Roles\IndexRoleService;
  *
  * @subGroup Role
  *
- * @authenticated
+ *
  */
 class IndexRoleController extends Controller
 {

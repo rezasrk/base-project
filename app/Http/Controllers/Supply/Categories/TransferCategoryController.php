@@ -11,7 +11,7 @@ use App\Services\Actions\Supply\Categories\TransferCategoryService;
  *
  * @subGroup Category
  *
- * @authenticated
+ *
  */
 class TransferCategoryController extends Controller
 {

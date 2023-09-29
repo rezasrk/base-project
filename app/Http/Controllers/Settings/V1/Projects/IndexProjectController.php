@@ -10,7 +10,7 @@ use App\Services\Actions\Settings\V1\Projects\IndexProjectService;
  *
  * @subGroup Project
  *
- * @authenticated
+ *
  */
 class IndexProjectController extends Controller
 {

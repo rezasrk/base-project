@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 /**
  * @group Settings
  *
- * @authenticated
+ *
  */
 class BaseinfoController extends Controller
 {

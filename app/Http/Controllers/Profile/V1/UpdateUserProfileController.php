@@ -10,7 +10,7 @@ use App\Services\Actions\Profile\V1\UpdateUserProfileService;
 /**
  * @group Profile
  *
- * @authenticated
+ *
  */
 class UpdateUserProfileController extends Controller
 {

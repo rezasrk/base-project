@@ -10,7 +10,7 @@ use App\Services\Actions\Settings\V1\Roles\IndexPermissionService;
  *
  * @subGroup Role
  *
- * @authenticated
+ *
  */
 class IndexPermissionController extends Controller
 {

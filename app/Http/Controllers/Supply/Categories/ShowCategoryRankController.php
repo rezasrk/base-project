@@ -10,7 +10,7 @@ use App\Services\Actions\Supply\Categories\ShowCategoryRankService;
  *
  * @subGroup Category
  *
- * @authenticated
+ *
  */
 class ShowCategoryRankController extends Controller
 {

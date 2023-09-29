@@ -8,13 +8,15 @@ use App\Services\Actions\Auth\DTO\LoginRequestDTO;
 use App\Services\Actions\Auth\LoginService;
 
 /**
+ * @unauthenticated
+ * 
  * @group Auth
  */
 class LoginController extends Controller
 {
     /**
      * Login
-     *
+     * 
      * @response{
      *   "status":"success",
      *   "message":"User login successfully"

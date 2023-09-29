@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
  *
  * @subGroup Category
  *
- * @authenticated
+ *
  */
 class SearchCategory implements SearchCategoryService
 {

@@ -9,7 +9,7 @@ use App\Services\Actions\Profile\V1\UploadSignatureService;
 /**
  * @group Profile
  *
- * @authenticated
+ *
  */
 class UploadSignatureController extends Controller
 {

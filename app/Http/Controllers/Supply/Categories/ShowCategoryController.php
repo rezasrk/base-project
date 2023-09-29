@@ -10,7 +10,7 @@ use App\Services\Actions\Supply\Categories\ShowCategoryService;
  *
  * @subGroup Category
  *
- * @authenticated
+ *
  */
 class ShowCategoryController extends Controller
 {
