@@ -89,10 +89,10 @@ final class ProjectSettingsControllerTest extends BaseFeatureTestCase
             'settings.supply' => ['present', 'array'],
             'settings.supply.pre_request_code' => ['required', 'string', 'min:3', 'max:3'],
             'settings.supply.status' => ['present', 'array'],
-            'settings.supply.status.first_status' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'settings.supply.status.first_status' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
             'settings.supply.status.between_statuses' => ['present', 'array', 'min:2'],
-            'settings.supply.status.between_statuses.*' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
-            'settings.supply.status.last_status' => ['required', 'exists:baseinfos,id,type,'.BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'settings.supply.status.between_statuses.*' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
+            'settings.supply.status.last_status' => ['required', 'exists:baseinfos,id,type,' . BaseinfoTypesEnum::REQUEST_STATUS->value],
         ], (new ProjectSettingsRequest())->rules());
     }
 

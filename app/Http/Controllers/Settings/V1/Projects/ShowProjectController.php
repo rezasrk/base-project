@@ -27,7 +27,7 @@ class ShowProjectController extends Controller
      *      "title":"Project title",
      *      "settings":{
      *         "supply":{
-     *             "pre_request_status":346,
+     *             "pre_request_code":346,
      *             "status":{
      *                 "first_status":{
      *                    "id":324,
