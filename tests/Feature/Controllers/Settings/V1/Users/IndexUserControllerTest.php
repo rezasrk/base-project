@@ -48,7 +48,6 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                                 [
                                     'id' => $permission->id,
                                     'name' => 'permissions.' . $permission->name,
-                                    'parent_id' => $permission->parent_id,
                                 ],
                             ],
                         ],
@@ -107,7 +106,6 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                                 [
                                     'id' => $permission->id,
                                     'name' => 'permissions.' . $permission->name,
-                                    'parent_id' => $permission->parent_id,
                                 ],
                             ],
                         ],
@@ -169,7 +167,6 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                                 [
                                     'id' => $permission->id,
                                     'name' => 'permissions.' . $permission->name,
-                                    'parent_id' => $permission->parent_id,
                                 ],
                             ],
                         ],
@@ -223,7 +220,6 @@ class IndexUserControllerTest extends BaseFeatureTestCase
                                 [
                                     'id' => $permission->id,
                                     'name' => 'permissions.' . $permission->name,
-                                    'parent_id' => $permission->parent_id,
                                 ],
                             ],
                         ],

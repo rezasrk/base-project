@@ -2,15 +2,34 @@
 
 namespace App\Services\Actions\Settings\V1\Roles;
 
-use App\Http\Resources\Settings\PermissionResourceCollection;
 use App\Models\Permission;
 
 class IndexPermissionService
 {
-    public function handle(): PermissionResourceCollection
+    public function handle(): array
     {
-        $permissions = Permission::query()->get();
+        return Permission::query()
+            ->where('parent_id', 0)
+            ->get()
+            ->map(function ($permission) {
+                return [
+                    'id' => $permission->id,
+                    'title' => $permission->name,
+                    'children' => $this->getPermissionChildren($permission->id)
+                ];
+            })->all();
+    }
 
-        return new PermissionResourceCollection($permissions);
+    private function getPermissionChildren(int $permissionParentId)
+    {
+        return Permission::query()
+            ->where('parent_id', $permissionParentId)
+            ->get()
+            ->map(function ($permission) {
+                return [
+                    'id' => $permission->id,
+                    'title' => $permission->name,
+                ];
+            })->all();
     }
 }

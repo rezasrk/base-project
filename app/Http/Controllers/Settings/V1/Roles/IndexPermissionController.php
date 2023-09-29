@@ -23,15 +23,20 @@ class IndexPermissionController extends Controller
      *   "data":[
      *      {
      *         "id":1,
-     *         "name":"Edit Article",
-     *         "parent_id":0
+     *         "name":"Supply menu",
+     *         "children":[
+     *             {
+     *                "id":2,
+     *                "name":"Store users",
+     *             } 
+     *         ]
      *      }
      *   ]
      * }
      */
     public function __invoke(IndexPermissionService $indexPermissionService)
     {
-        return response()->resource(
+        return response()->success(
             __('messages.fetch', ['title' => __('title.permission')]),
             $indexPermissionService->handle(),
         );

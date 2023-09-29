@@ -32,7 +32,6 @@ final class IndexRoleControllerTest extends BaseFeatureTestCase
                         [
                             'id' => $permission->id,
                             'name' => 'permissions.' . $permission->name,
-                            'parent_id' => $permission->parent_id,
                         ],
                     ],
                 ],
